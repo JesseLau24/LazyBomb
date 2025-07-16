@@ -334,5 +334,59 @@
     "deadline": "2025-07-16T21:00",
     "status": "to do",
     "strike_time": "2025-07-16T23:46:52.343442"
+  },
+  {
+    "task": "Send the file of updated client information to Anderson in the IT team",
+    "deadline": "2025-07-15T19:00",
+    "status": "to do",
+    "strike_time": "2025-07-16T23:50:16.849957"
+  },
+  {
+    "task": "Prepare the quarterly budget report for the Accounting Team.",
+    "deadline": "2025-07-14T14:09",
+    "status": "to do",
+    "strike_time": "2025-07-16T23:50:16.860920"
+  },
+  {
+    "task": "Pick up Jerry Smith at the airport",
+    "deadline": "2025-07-14T15:17",
+    "status": "I'm on it",
+    "strike_time": "2025-07-16T23:50:16.868234"
+  },
+  {
+    "task": "Update your profile picture to include the new company uniform and new logo as background.",
+    "deadline": "2025-07-14T17:00",
+    "status": "I'm on it",
+    "strike_time": "2025-07-16T23:50:16.878720"
+  },
+  {
+    "task": "Upload class notes from the financial accounting course training to Teams Cloud",
+    "deadline": "2025-07-14T22:15",
+    "status": "I'm on it",
+    "strike_time": "2025-07-16T23:50:16.886386"
+  },
+  {
+    "task": "Finish the new product catalog",
+    "deadline": "2025-07-16T22:45",
+    "status": "to do",
+    "strike_time": "2025-07-16T23:50:16.895249"
+  },
+  {
+    "task": "Finish editing and upload the video from Comic Con 2025 Tokyo",
+    "deadline": "2025-07-14T19:00",
+    "status": "to do",
+    "strike_time": "2025-07-16T23:50:16.904431"
+  },
+  {
+    "task": "Review the new terms of the contract to identify any issues",
+    "deadline": "2025-07-16T21:00",
+    "status": "to do",
+    "strike_time": "2025-07-16T23:50:16.913323"
+  },
+  {
+    "task": "Clean the office",
+    "deadline": "2025-07-17T00:00",
+    "status": "I'm on it",
+    "strike_time": "2025-07-17T00:25:00.516134"
   }
 ]

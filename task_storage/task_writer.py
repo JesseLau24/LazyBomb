@@ -32,13 +32,15 @@ def append_tasks(new_tasks: List[Dict], filename: str = TASK_FILE):
 
     existing_task_names = {task["task"] for task in existing}
 
-    # ✅ add "to do" to status (if missing)
+    # ✅ 标准化任务结构
     normalized = []
     for t in new_tasks:
         t = t.copy()
-        if "status" not in t:
-            t["status"] = "to do"
+        t["status"] = t.get("status", "to do")
+        t["source"] = t.get("source", "manual")
+        t["deadline"] = t.get("deadline", t.get("due_date", ""))
         normalized.append(t)
+
 
     # ✅ remove duplicates
     filtered = [t for t in normalized if t["task"] not in existing_task_names]

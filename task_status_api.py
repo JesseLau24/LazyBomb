@@ -1,6 +1,7 @@
 from flask import Flask, request, jsonify, render_template, make_response, send_file
 from flask_cors import CORS
 from task_storage.task_status_updater import update_task_status
+from task_storage.task_writer import append_tasks  
 from utils.html_generator import generate_task_html_from_json
 from utils.constants import TASKS_JSON_PATH
 import json
@@ -127,6 +128,24 @@ def delete_forever():
         return jsonify({"error": "Task not found"}), 404
     save_tasks(filtered_tasks)
     return jsonify({"message": "Task permanently deleted"}), 200
+
+@app.route('/add_task', methods=['POST'])
+def add_task():
+    data = request.get_json()
+    task_text = data.get("task", "").strip()
+    if not task_text:
+        return jsonify({"error": "Task name is required"}), 400
+
+    new_task = {
+        "task": task_text,
+        "due_date": data.get("due_date", ""),
+        "priority": data.get("priority", "").lower(),
+        "assigner": data.get("assigner", ""),
+        "comments": data.get("comments", "")
+    }
+
+    append_tasks([new_task])
+    return jsonify({"message": "Task added"}), 200
 
 if __name__ == '__main__':
     app.run(port=5000)

@@ -72,6 +72,7 @@
     <div style="margin-bottom: 20px;">
         <button onclick="sortByDate()">📅 Sort by Deadline</button>
         <button onclick="sortByPriority()">🔥 Sort by Priority</button>
+        <button onclick="document.getElementById('addTaskModal').style.display='flex'">➕ Add New Task</button>
     </div>
 
     <div class="date-group-container">
@@ -157,6 +158,30 @@
             <button onclick="document.getElementById('editModal').style.display='none'">❌ Cancel</button>
         </div>
     </div>
+
+    <div class="modal" id="addTaskModal">
+        <div class="modal-content">
+            <h3>Add New Task</h3>
+            <label>Task: <input id="new-task-name"></label><br><br>
+            <label>Due Date: <input type="datetime-local" id="new-due-date"></label><br><br>
+            <label>Priority:
+                <select id="new-priority">
+                    <option value="">(unset)</option>
+                    <option value="high">high</option>
+                    <option value="medium">medium</option>
+                    <option value="low">low</option>
+                    <option value="it's complicated">it's complicated</option>
+                </select>
+            </label><br><br>
+            <label>Assigner: <input id="new-assigner"></label><br><br>
+            <label>Comments:<br>
+                <textarea id="new-comments" rows="3" style="width: 100%;"></textarea>
+            </label><br>
+            <button onclick="submitNewTask()">📥 Add Task</button>
+            <button onclick="document.getElementById('addTaskModal').style.display='none'">❌ Cancel</button>
+        </div>
+    </div>
+
 
     <script>
         function toggleEmailContent(event, button) {
@@ -288,6 +313,23 @@
             });
             location.reload();
         }
+
+        async function submitNewTask() {
+            const newTask = {
+                task: document.getElementById('new-task-name').value,
+                due_date: document.getElementById('new-due-date').value,
+                priority: document.getElementById('new-priority').value,
+                assigner: document.getElementById('new-assigner').value,
+                comments: document.getElementById('new-comments').value
+            };
+            await fetch('/add_task', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify(newTask)
+            });
+            location.reload();
+        }
+
     </script>
 </body>
 </html>

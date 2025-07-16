@@ -1,122 +1,102 @@
 [
   {
     "task": "Send the file of updated client information to Anderson in the IT team",
-    "due_date": "2025-07-15T19:00",
+    "due_date": "2025-07-25T19:00",
     "priority": "high",
     "assigner": "IT Department",
     "comments": "The task is important as it involves updating the client info database.",
     "status": "to do",
-    "deadline": "2025-07-15T19:00",
+    "deadline": "2025-07-25T19:00",
     "email_content": "Dear Sales Team\r\n\r\nI hope this email finds you well\r\n\r\nPlease send the file of updated client information to Anderson in our IT\r\nteam so that he could update the client info database. The deadline is 15th\r\nJuly 2025 19:00\r\nThis is really important!\r\n\r\nBest Regards\r\nIT Department\r\n"
   },
   {
-    "task": "Prepare the contract for the new investors in both English and Japanese.",
-    "due_date": "2025-07-14T10:00",
-    "priority": "it's complicated",
-    "assigner": "Jerry Smith",
-    "comments": "The task involves preparing a contract that needs to be available in two languages, which might require translation services or expertise.",
-    "status": "deleted",
-    "deadline": "2025-07-14T10:00",
-    "email_content": "Dear Alex\r\n\r\nI hope this email finds you well\r\n\r\nPlease prepare the contract for the new investors. The contract has to be\r\nin both English and Japanese.\r\n\r\nDeadline is 10:00 July 12th 2025\r\n\r\nBest regards\r\nJerry Smith\r\n"
-  },
-  {
     "task": "Deploy the latest software patch to all servers",
-    "due_date": "2025-07-14T09:45",
+    "due_date": "2025-07-23T09:45",
     "priority": "low",
     "assigner": "Aaron Blackwell",
     "comments": "This task involves deploying a new software update across all relevant systems.",
     "status": "finished",
-    "deadline": "2025-07-14T09:45",
+    "deadline": "2025-07-23T09:45",
     "email_content": "Dear DevOps;\r\n\r\nI hope this email finds you well!\r\n\r\nPlease make sure to deploy the latest software patch to all servers by July\r\n12th 2025 9:45 AM.\r\n\r\nPS: make sure to verify the backup is complete before deployment and report\r\nif there are any issues.\r\n\r\nBest Regards\r\nAaron Blackwell\r\n"
   },
   {
     "task": "Verify the backup is complete before deployment and report any issues",
-    "due_date": "2025-07-14T09:45",
+    "due_date": "2025-07-23T09:45",
     "priority": "medium",
     "assigner": "Aaron Blackwell",
     "comments": "Ensure that all data is properly backed up prior to deploying the patch, and inform if there are any problems.",
     "status": "finished",
-    "deadline": "2025-07-14T09:45",
+    "deadline": "2025-07-23T09:45",
     "email_content": "Dear DevOps;\r\n\r\nI hope this email finds you well!\r\n\r\nPlease make sure to deploy the latest software patch to all servers by July\r\n12th 2025 9:45 AM.\r\n\r\nPS: make sure to verify the backup is complete before deployment and report\r\nif there are any issues.\r\n\r\nBest Regards\r\nAaron Blackwell\r\n"
   },
   {
     "task": "Prepare the quarterly budget report for the Accounting Team.",
-    "due_date": "2025-07-14T14:09",
+    "due_date": "2025-07-23T14:09",
     "priority": "it's complicated",
     "assigner": "Alex",
     "comments": "Highlight any significant variances in the report.",
     "status": "to do",
-    "deadline": "2025-07-14T14:09",
+    "deadline": "2025-07-23T14:09",
     "email_content": "Dear Accounting Team\r\n\r\nI hope this email finds you well!\r\n\r\nPlease kindly prepare the quarterly budget report by July 12th 2025 14:09.\r\nHighlight any significant variances.\r\n\r\nBest regards\r\nAlex\r\n"
   },
   {
     "task": "Pick up the new uniform",
-    "due_date": "2025-07-14T14:50",
+    "due_date": "2025-07-23T14:50",
     "priority": "high",
     "assigner": "Roth",
     "comments": "The task is to pick up a new uniform from the coffee room.",
     "status": "finished",
-    "deadline": "2025-07-14T14:50",
+    "deadline": "2025-07-23T14:50",
     "email_content": "Dear Alex,\r\n\r\nplease pick up the new uniform at coffee room by 14:50 12th July 2025\r\n\r\nBest Regards\r\nRoth\r\n"
   },
   {
     "task": "Pick up Jerry Smith at the airport",
-    "due_date": "2025-07-14T15:17",
+    "due_date": "2025-07-23T15:17",
     "priority": "medium",
     "assigner": "Ryne",
     "comments": "The driver will be waiting for you at the entrance of our building.",
     "status": "I'm on it",
-    "deadline": "2025-07-14T15:17",
+    "deadline": "2025-07-23T15:17",
     "email_content": "Dear Alex\r\n\r\nPlease pick up Jerry Smith at the airport.\r\n\r\nThe driver would be waiting for you at the entrance of our building at\r\n15:17 July 12 2025.\r\n\r\nBest regards\r\nRyne\r\n"
   },
   {
-    "task": "Collect company-issued keyboards from the coffee room for employees who need them",
-    "due_date": "2025-07-14T14:00",
-    "priority": "high",
-    "assigner": "Hayle, IT Department",
-    "comments": "Employees are invited to come by 11th July 2025 at 14:00. Early arrivals may get their preferred color.",
-    "status": "deleted",
-    "deadline": "2025-07-14T14:00",
-    "email_content": "Dear all\r\n\r\nI hope this email finds you well.\r\n\r\nThe company issued keyboards (logitech k120 for business) have arrived.\r\nThere are two colors to choose from: white and black. Please come to the\r\ncoffee room by 11th July 2025 14:00 if you need one.\r\n\r\nPS: Early comers would be able to choose your favorite color.\r\n\r\nBest regards\r\nHayle\r\nIT Department\r\n"
-  },
-  {
     "task": "Update your profile picture to include the new company uniform and new logo as background.",
-    "due_date": "2025-07-14T17:00",
+    "due_date": "2025-07-23T17:00",
     "priority": "high",
     "assigner": "Lisa Thompson",
     "comments": "This task involves updating a personal or professional online profile to reflect the company's current branding with the specified elements. Ensure the new image is saved in the correct format and dimensions as required by the platform.",
     "status": "I'm on it",
-    "deadline": "2025-07-14T17:00",
+    "deadline": "2025-07-23T17:00",
     "email_content": "Dear Alex\r\n\r\nI hope this email finds you well\r\n\r\nPlease update your new profile picture with a new company uniform and new\r\nlogo as background. Deadline is by 17:00 July 12th 2025.\r\n\r\nBest regards\r\nLisa Thompson\r\n"
   },
   {
     "task": "Upload class notes from the financial accounting course training to Teams Cloud",
-    "due_date": "2025-07-14T22:15",
+    "due_date": "2025-07-23T22:15",
     "priority": "high",
     "assigner": "Lucky",
     "comments": "This task is for everyone who attended the financial accounting course training.",
-    "status": "I'm on it",
-    "deadline": "2025-07-14T22:15",
+    "status": "deleted",
+    "deadline": "2025-07-23T22:15",
     "email_content": "Dear All\r\n\r\nI hope this email finds you well\r\n\r\nWe have just finished the financial accounting course training and everyone\r\nneeds to upload class note to teams cloud by 22:15 July 12th 2025\r\n\r\nBest regards\r\nLucky\r\n"
   },
   {
     "task": "Finish the new product catalog",
-    "due_date": "2025-07-16T22:45",
+    "due_date": "2025-07-24T22:45",
     "priority": "",
     "assigner": "Tony",
     "comments": "Ensure all necessary products are included and properly categorized.",
     "status": "to do",
-    "deadline": "2025-07-16T22:45",
+    "deadline": "2025-07-24T22:45",
     "email_content": "Dear Alex\r\n\r\nI hope this email finds you well.\r\n\r\nPlease finish and then upload the new product catalog. The deadline is by\r\n22:45 July 12th 2025\r\n\r\nBest regards\r\nTony\r\n"
   },
   {
     "task": "Upload the new product catalog to the designated location or platform",
-    "due_date": "2025-07-18T22:45",
-    "priority": "",
+    "due_date": "2025-07-17T10:45",
+    "priority": "high",
     "assigner": "Tony",
     "comments": "The upload should be completed after finishing the catalog.",
     "status": "to do",
-    "deadline": "2025-07-18T22:45",
+    "deadline": "2025-07-17T10:45",
     "email_content": "Dear Alex\r\n\r\nI hope this email finds you well.\r\n\r\nPlease finish and then upload the new product catalog. The deadline is by\r\n22:45 July 12th 2025\r\n\r\nBest regards\r\nTony\r\n"
   },
   {
@@ -152,41 +132,69 @@
   {
     "task": "Install the latest Ubuntu Pro LTS on all new laptops purchased for the Dev team.",
     "due_date": "2025-07-23T17:00",
-    "priority": "high",
+    "priority": "it's complicated",
     "assigner": "Thomas, IT Department",
     "comments": "This task is crucial as the laptops will be used by the Dev team the following day. Ensure all new laptops are updated with the latest version.",
-    "status": "to do",
+    "status": "deleted",
     "deadline": "2025-07-23T17:00",
     "email_content": "Dear Alex\r\n\r\nI hope this email finds you well\r\n\r\nPlease install the latest Ubunto Pro LTS to all the new laptops we\r\npurchased for our Dev team by 17:00 July 13th 2025.\r\n\r\nThis is really important because they would be using it tomorrow!\r\n\r\nBest regards\r\nThomas\r\nIT Department\r\n"
   },
   {
     "task": "Translate clients' emails into German and Japanese.",
-    "due_date": "2025-07-16T23:55",
+    "due_date": "2025-07-24T23:55",
     "priority": "high",
     "assigner": "Mike Marius, Client Specialist and Project Manager",
     "comments": "This task is marked as really important by the assigner.",
     "status": "to do",
-    "deadline": "2025-07-16T23:55",
+    "deadline": "2025-07-24T23:55",
     "email_content": "Dear Alex\r\n\r\nI hope this email finds you well.\r\n\r\nWe have some clients' emails that need to be translated into German and\r\nJapanese. Please finish translation by 23:55 July 16th 2025.\r\n\r\nThis is really important.\r\n\r\nBest regards\r\nMike Marius\r\nClient Specialist and Project Manager\r\n"
   },
   {
     "task": "Finish editing and upload the video from Comic Con 2025 Tokyo",
-    "due_date": "2025-07-14T19:00",
+    "due_date": "2025-07-23T19:00",
     "priority": "medium",
     "assigner": "Astrial Botane",
     "comments": "The task is to complete both editing and uploading by the specified deadline.",
     "status": "to do",
-    "deadline": "2025-07-14T19:00",
+    "deadline": "2025-07-23T19:00",
     "email_content": "Dear Alex\r\n\r\nI hope this email finds you well.\r\n\r\nPlease finish editing and uploading the video form Comic Con 2025 Tokyo by\r\n19:00 July 14th 2025\r\n\r\nBest Regards\r\nAstrial Botane\r\n"
   },
   {
     "task": "Review the new terms of the contract to identify any issues",
-    "due_date": "2025-07-16T21:00",
-    "priority": null,
+    "due_date": "2025-07-25T21:00",
+    "priority": "",
     "assigner": "Polly",
     "comments": "This is a direct request from Polly to ensure there are no issues with the new contract terms.",
     "status": "to do",
-    "deadline": "2025-07-16T21:00",
+    "deadline": "2025-07-25T21:00",
     "email_content": "Dear Alex\r\n\r\nI hope this email finds you well.\r\n\r\nPlease review the new terms of the contract to see if there are any issues.\r\n\r\nDeadline for this task is by 21:00 July 16th 2025\r\n\r\nBest regards\r\nPolly\r\n"
+  },
+  {
+    "task": "Take the company car to the 4S store for service.",
+    "due_date": "2025-07-17T00:15",
+    "priority": "high",
+    "assigner": "Samantha",
+    "comments": "The car requires service after not being serviced for 5 years.",
+    "status": "I'm on it",
+    "deadline": "2025-07-17T00:15",
+    "email_content": "Dear Alex\r\n\r\nOur company car hasn't been serviced for 5 years and now it requires\r\nservice.\r\n\r\nPlease take it to 4S store at 00:15AM July 17th 2025\r\n\r\nBest regards\r\nSamantha\r\n"
+  },
+  {
+    "task": "Wash the car",
+    "due_date": "2025-07-17T00:30",
+    "priority": "low",
+    "assigner": "Samantha",
+    "comments": "The car is covered in poop......So i guess I'll need to pay extra to get it cleaned",
+    "status": "to do",
+    "deadline": "2025-07-17T00:30"
+  },
+  {
+    "task": "Clean the office",
+    "due_date": "2025-07-17T00:00",
+    "priority": "it's complicated",
+    "assigner": "Samantha",
+    "comments": "Somebody threw out in Room 607 so I guess no beer for meetings ever",
+    "status": "I'm on it",
+    "deadline": "2025-07-17T00:00"
   }
 ]
