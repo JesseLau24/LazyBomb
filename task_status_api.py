@@ -5,7 +5,6 @@ from utils.html_generator import generate_task_html_from_json
 from utils.constants import TASKS_JSON_PATH
 import json
 import os
-from datetime import datetime
 
 app = Flask(__name__)
 CORS(app)
@@ -91,6 +90,7 @@ def edit_task():
     for t in tasks:
         if t.get("task") == task_name:
             t.update(updates)
+            # ✅ 若更新了 due_date，就自动更新 deadline 字段，保持同步
             if "due_date" in updates:
                 t["deadline"] = updates["due_date"]
             updated = True
@@ -127,28 +127,6 @@ def delete_forever():
         return jsonify({"error": "Task not found"}), 404
     save_tasks(filtered_tasks)
     return jsonify({"message": "Task permanently deleted"}), 200
-
-@app.route('/add_task', methods=['POST'])
-def add_task():
-    data = request.get_json()
-    if not data or not data.get("task"):
-        return jsonify({"error": "Task content is missing"}), 400
-
-    task_obj = {
-        "task": data["task"],
-        "due_date": data.get("due_date"),
-        "deadline": data.get("due_date"),
-        "priority": data.get("priority", "normal"),
-        "assigner": data.get("assigner", "User"),
-        "comments": data.get("comments", ""),
-        "status": "to do",
-        "email_content": None
-    }
-
-    tasks = load_tasks()
-    tasks.append(task_obj)
-    save_tasks(tasks)
-    return jsonify({"message": "Task added"}), 200
 
 if __name__ == '__main__':
     app.run(port=5000)

@@ -72,31 +72,6 @@
     <div style="margin-bottom: 20px;">
         <button onclick="sortByDate()">📅 Sort by Deadline</button>
         <button onclick="sortByPriority()">🔥 Sort by Priority</button>
-        <button onclick="showAddTaskForm()">➕ Add New Task</button>
-    </div>
-
-    <!-- Add Task Modal -->
-    <div class="modal" id="addTaskModal">
-        <div class="modal-content">
-            <h3>Add New Task</h3>
-            <label>Task: <input id="new-task-name"></label><br><br>
-            <label>Due Date: <input type="datetime-local" id="new-due-date"></label><br><br>
-            <label>Priority:
-                <select id="new-priority">
-                    <option value="">(unset)</option>
-                    <option value="high">high</option>
-                    <option value="medium">medium</option>
-                    <option value="low">low</option>
-                    <option value="it's complicated">it's complicated</option>
-                </select>
-            </label><br><br>
-            <label>Assigner: <input id="new-assigner" value="User"></label><br><br>
-            <label>Comments:<br>
-                <textarea id="new-comments" rows="3" style="width: 100%;"></textarea>
-            </label><br>
-            <button onclick="submitNewTask()">✅ Add</button>
-            <button onclick="closeAddTaskModal()">❌ Cancel</button>
-        </div>
     </div>
 
     <div class="date-group-container">
@@ -159,29 +134,157 @@
         {% endfor %}
     </div>
 
-    <!-- 其他 modal 和脚本保留 -->
+    <div class="modal" id="editModal">
+        <div class="modal-content">
+            <h3>Edit Task</h3>
+            <input type="hidden" id="original-task-name">
+            <label>Task: <input id="edit-task-name"></label><br><br>
+            <label>Due Date: <input type="datetime-local" id="edit-due-date"></label><br><br>
+            <label>Priority:
+                <select id="edit-priority">
+                    <option value="">(unset)</option>
+                    <option value="high">high</option>
+                    <option value="medium">medium</option>
+                    <option value="low">low</option>
+                    <option value="it's complicated">it's complicated</option>
+                </select>
+            </label><br><br>
+            <label>Assigner: <input id="edit-assigner"></label><br><br>
+            <label>Comments:<br>
+                <textarea id="edit-comments" rows="3" style="width: 100%;"></textarea>
+            </label><br>
+            <button onclick="submitEditForm()">💾 Save</button>
+            <button onclick="document.getElementById('editModal').style.display='none'">❌ Cancel</button>
+        </div>
+    </div>
 
     <script>
-        function showAddTaskForm() {
-            document.getElementById('addTaskModal').style.display = 'flex';
+        function toggleEmailContent(event, button) {
+            event.preventDefault();
+            const content = button.parentElement.nextElementSibling;
+            if (content.style.display === 'none') {
+                content.style.display = 'block';
+                button.textContent = '-';
+            } else {
+                content.style.display = 'none';
+                button.textContent = '+';
+            }
         }
 
-        function closeAddTaskModal() {
-            document.getElementById('addTaskModal').style.display = 'none';
+        async function updateStatus(selectElem) {
+            const taskName = selectElem.getAttribute('data-task');
+            const newStatus = selectElem.value;
+            try {
+                const res = await fetch('/update_status', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({task: taskName, status: newStatus})
+                });
+                const data = await res.json();
+                if (!res.ok) {
+                    alert('❌ Failed to update task status: ' + data.error);
+                    selectElem.value = selectElem.getAttribute('data-prev');
+                } else {
+                    selectElem.setAttribute('data-prev', newStatus);
+                    updateTaskStyle(selectElem.closest('li'), newStatus);
+                }
+            } catch (err) {
+                alert('⚠️ Error updating task status: ' + err.message);
+                selectElem.value = selectElem.getAttribute('data-prev');
+            }
         }
 
-        async function submitNewTask() {
-            const task = document.getElementById('new-task-name').value.trim();
-            if (!task) return alert("Task name is required.");
-            const due_date = document.getElementById('new-due-date').value;
-            const priority = document.getElementById('new-priority').value;
-            const assigner = document.getElementById('new-assigner').value;
-            const comments = document.getElementById('new-comments').value;
+        function updateTaskStyle(liElem, status) {
+            liElem.classList.remove('status-todo', 'status-imonit', 'status-finished');
+            if (status.toLowerCase() === 'to do') liElem.classList.add('status-todo');
+            else if (status.toLowerCase() === "i'm on it") liElem.classList.add('status-imonit');
+            else if (status.toLowerCase() === 'finished') liElem.classList.add('status-finished');
+        }
 
-            await fetch('/add_task', {
+        function sortTasks(compareFn) {
+            document.querySelectorAll('.date-group').forEach(dateGroup => {
+                dateGroup.querySelectorAll('.status-column').forEach(statusCol => {
+                    const ul = statusCol.querySelector('ul');
+                    const items = Array.from(ul.children);
+                    items.sort(compareFn);
+                    items.forEach(item => ul.appendChild(item));
+                });
+            });
+        }
+
+        function sortByDate() {
+            sortTasks((a, b) => new Date(a.dataset.due ?? '') - new Date(b.dataset.due ?? ''));
+        }
+
+        function sortByPriority() {
+            const priorityOrder = {
+                'high': 1,
+                'medium': 2,
+                'low': 3,
+                "it's complicated": 4,
+                '': 5,
+                'normal': 5
+            };
+            sortTasks((a, b) => {
+                const priA = priorityOrder[(a.dataset.priority ?? '').toLowerCase()] || 5;
+                const priB = priorityOrder[(b.dataset.priority ?? '').toLowerCase()] || 5;
+                return priA - priB;
+            });
+        }
+
+        async function deleteTask(taskName) {
+            if (!confirm(`Are you sure you want to delete "${taskName}"?`)) return;
+            await fetch('/delete_task', {
                 method: 'POST',
                 headers: {'Content-Type': 'application/json'},
-                body: JSON.stringify({ task, due_date, priority, assigner, comments })
+                body: JSON.stringify({task: taskName})
+            });
+            location.reload();
+        }
+
+        async function restoreTask(taskName) {
+            await fetch('/restore_task', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({task: taskName})
+            });
+            location.reload();
+        }
+
+        async function deleteForever(taskName) {
+            if (!confirm(`🚨 Permanently delete "${taskName}"? This cannot be undone.`)) return;
+            await fetch('/delete_forever', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({task: taskName})
+            });
+            location.reload();
+        }
+
+        function openEditModal(task) {
+            document.getElementById('edit-task-name').value = task.task || '';
+            document.getElementById('edit-due-date').value = task.due_date || '';
+            document.getElementById('edit-priority').value = task.priority || '';
+            document.getElementById('edit-assigner').value = task.assigner || '';
+            document.getElementById('edit-comments').value = task.comments || '';
+            document.getElementById('original-task-name').value = task.task;
+            document.getElementById('editModal').style.display = 'flex';
+        }
+
+        async function submitEditForm() {
+            const originalTask = document.getElementById('original-task-name').value;
+            const updates = {
+                task: document.getElementById('edit-task-name').value,
+                due_date: document.getElementById('edit-due-date').value,
+                deadline: document.getElementById('edit-due-date').value,
+                priority: document.getElementById('edit-priority').value,
+                assigner: document.getElementById('edit-assigner').value,
+                comments: document.getElementById('edit-comments').value
+            };
+            await fetch('/edit_task', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({task: originalTask, updates})
             });
             location.reload();
         }
