@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LazyBomb Task List</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        .status-column {
+            flex: 1;
+            padding: 10px;
+            background-color: #fefefe;
+            border-radius: 10px;
+            box-shadow: 0 0 4px rgba(0,0,0,0.1);
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.4);
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 400px;
+            width: 100%;
+        }
+        .no-deadline-warning {
+            color: orange;
+            font-weight: bold;
+            margin-left: 5px;
+        }
+        .email-content {
+            display: none;
+            white-space: pre-wrap;
+            background-color: #f2f2f2;
+            padding: 10px;
+            border-radius: 6px;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    {% macro status_class(status) %}
+        {% set s = status|lower %}
+        {% if s == 'to do' %}
+            status-todo
+        {% elif s == "i'm on it" or s == 'imonit' %}
+            status-imonit
+        {% elif s == 'finished' %}
+            status-finished
+        {% elif s == 'deleted' %}
+            status-deleted
+        {% else %}
+            status-todo
+        {% endif %}
+    {% endmacro %}
+
+    {% set statuses = ['to do', "I'm on it", 'finished', 'deleted'] %}
+
+    <h1>🧨 LazyBomb Task List</h1>
+
+    <form action="/export_html" method="post">
+        <button type="submit">📄 Export Static HTML Snapshot</button>
+    </form>
+
+    <div style="margin-bottom: 20px;">
+        <button onclick="sortByDate()">📅 Sort by Deadline</button>
+        <button onclick="sortByPriority()">🔥 Sort by Priority</button>
+        <button onclick="showAddTaskForm()">➕ Add New Task</button>
+    </div>
+
+    <!-- Add Task Modal -->
+    <div class="modal" id="addTaskModal">
+        <div class="modal-content">
+            <h3>Add New Task</h3>
+            <label>Task: <input id="new-task-name"></label><br><br>
+            <label>Due Date: <input type="datetime-local" id="new-due-date"></label><br><br>
+            <label>Priority:
+                <select id="new-priority">
+                    <option value="">(unset)</option>
+                    <option value="high">high</option>
+                    <option value="medium">medium</option>
+                    <option value="low">low</option>
+                    <option value="it's complicated">it's complicated</option>
+                </select>
+            </label><br><br>
+            <label>Assigner: <input id="new-assigner" value="User"></label><br><br>
+            <label>Comments:<br>
+                <textarea id="new-comments" rows="3" style="width: 100%;"></textarea>
+            </label><br>
+            <button onclick="submitNewTask()">✅ Add</button>
+            <button onclick="closeAddTaskModal()">❌ Cancel</button>
+        </div>
+    </div>
+
+    <div class="date-group-container">
+        {% set tasks_by_date = {} %}
+        {% for task in tasks %}
+            {% set date_key = task.due_date[:10] if task.due_date else 'No Deadline' %}
+            {% if date_key not in tasks_by_date %}
+                {% set _ = tasks_by_date.update({date_key: []}) %}
+            {% endif %}
+            {% set _ = tasks_by_date[date_key].append(task) %}
+        {% endfor %}
+
+        {% for date_str, group_tasks in tasks_by_date|dictsort %}
+        <div class="date-group">
+            <h2>{{ date_str }}</h2>
+            <div class="status-row">
+                {% for col in statuses %}
+                <div class="status-column">
+                    <h3>{{ col|capitalize }}</h3>
+                    <ul>
+                        {% for task in group_tasks if task.status|lower == col|lower %}
+                        <li class="{{ status_class(task.status) }}"
+                            data-due="{{ task.due_date or '9999-12-31T23:59' }}"
+                            data-priority="{{ task.priority or 'normal' }}">
+                            <div class="task-summary">
+                                <strong>{{ task.task or 'Untitled Task' | e }}</strong>
+                                <button class="show-email-btn" onclick="toggleEmailContent(event, this)">+</button>
+                            </div>
+                            <div class="email-content">{{ task.email_content or '' }}</div>
+                            📅 <em>Due:</em> {{ task.due_date or 'No deadline' | e }}
+                            {% if not task.due_date %}<span class="no-deadline-warning">⚠️</span>{% endif %}
+                            <br>
+                            🔥 <em>Priority:</em> {{ task.priority|capitalize if task.priority else 'Normal' }} <br>
+                            🧑 <em>Assigned by:</em> {{ task.assigner or 'Unassigned' | e }}<br>
+                            💬 <em>Comments:</em> {{ task.comments or 'None' | e }}<br>
+                            <label>Status:
+                                <select 
+                                    data-task="{{ task.task | e }}" 
+                                    data-prev="{{ task.status }}"
+                                    onchange="updateStatus(this)">
+                                    <option value="to do" {% if task.status == 'to do' %}selected{% endif %}>to do</option>
+                                    <option value="I'm on it" {% if task.status == "I'm on it" %}selected{% endif %}>I'm on it</option>
+                                    <option value="finished" {% if task.status == 'finished' %}selected{% endif %}>finished</option>
+                                </select>
+                            </label>
+                            <button onclick='openEditModal({{ task | tojson | safe }})'>✏️ Edit</button>
+                            {% if task.status == 'deleted' %}
+                            <button onclick="restoreTask('{{ task.task }}')">♻️ Restore</button>
+                            <button onclick="deleteForever('{{ task.task }}')">🧨 Delete Forever</button>
+                            {% else %}
+                            <button onclick="deleteTask('{{ task.task }}')">🗑️ Delete</button>
+                            {% endif %}
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <!-- 其他 modal 和脚本保留 -->
+
+    <script>
+        function showAddTaskForm() {
+            document.getElementById('addTaskModal').style.display = 'flex';
+        }
+
+        function closeAddTaskModal() {
+            document.getElementById('addTaskModal').style.display = 'none';
+        }
+
+        async function submitNewTask() {
+            const task = document.getElementById('new-task-name').value.trim();
+            if (!task) return alert("Task name is required.");
+            const due_date = document.getElementById('new-due-date').value;
+            const priority = document.getElementById('new-priority').value;
+            const assigner = document.getElementById('new-assigner').value;
+            const comments = document.getElementById('new-comments').value;
+
+            await fetch('/add_task', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({ task, due_date, priority, assigner, comments })
+            });
+            location.reload();
+        }
+    </script>
+</body>
+</html>
