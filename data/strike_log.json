@@ -388,5 +388,41 @@
     "deadline": "2025-07-17T00:00",
     "status": "I'm on it",
     "strike_time": "2025-07-17T00:25:00.516134"
+  },
+  {
+    "task": "Take the company car to the 4S store for service.",
+    "deadline": "2025-07-17T00:15",
+    "status": "I'm on it",
+    "strike_time": "2025-07-17T00:31:10.543890"
+  },
+  {
+    "task": "Clean the office",
+    "deadline": "2025-07-17T00:00",
+    "status": "I'm on it",
+    "strike_time": "2025-07-17T00:31:10.544478"
+  },
+  {
+    "task": "Wash the car",
+    "deadline": "2025-07-17T00:30",
+    "status": "to do",
+    "strike_time": "2025-07-17T00:45:01.755437"
+  },
+  {
+    "task": "Take the company cat Lucky to the vet for her annual check.",
+    "deadline": "2025-07-17T00:20",
+    "status": "to do",
+    "strike_time": "2025-07-17T00:45:01.755950"
+  },
+  {
+    "task": "Wash the car",
+    "deadline": "2025-07-17T00:30",
+    "status": "to do",
+    "strike_time": "2025-07-17T00:50:05.184975"
+  },
+  {
+    "task": "Take the company cat Lucky to the vet for her annual check.",
+    "deadline": "2025-07-17T00:20",
+    "status": "to do",
+    "strike_time": "2025-07-17T00:50:05.185295"
   }
 ]

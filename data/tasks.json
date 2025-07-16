@@ -91,12 +91,12 @@
   },
   {
     "task": "Upload the new product catalog to the designated location or platform",
-    "due_date": "2025-07-17T10:45",
-    "priority": "high",
+    "due_date": "2025-07-17T00:50",
+    "priority": "low",
     "assigner": "Tony",
     "comments": "The upload should be completed after finishing the catalog.",
-    "status": "to do",
-    "deadline": "2025-07-17T10:45",
+    "status": "I'm on it",
+    "deadline": "2025-07-17T00:50",
     "email_content": "Dear Alex\r\n\r\nI hope this email finds you well.\r\n\r\nPlease finish and then upload the new product catalog. The deadline is by\r\n22:45 July 12th 2025\r\n\r\nBest regards\r\nTony\r\n"
   },
   {
@@ -172,17 +172,17 @@
   {
     "task": "Take the company car to the 4S store for service.",
     "due_date": "2025-07-17T00:15",
-    "priority": "high",
+    "priority": "low",
     "assigner": "Samantha",
     "comments": "The car requires service after not being serviced for 5 years.",
-    "status": "I'm on it",
+    "status": "finished",
     "deadline": "2025-07-17T00:15",
     "email_content": "Dear Alex\r\n\r\nOur company car hasn't been serviced for 5 years and now it requires\r\nservice.\r\n\r\nPlease take it to 4S store at 00:15AM July 17th 2025\r\n\r\nBest regards\r\nSamantha\r\n"
   },
   {
     "task": "Wash the car",
     "due_date": "2025-07-17T00:30",
-    "priority": "low",
+    "priority": "high",
     "assigner": "Samantha",
     "comments": "The car is covered in poop......So i guess I'll need to pay extra to get it cleaned",
     "status": "to do",
@@ -194,7 +194,49 @@
     "priority": "it's complicated",
     "assigner": "Samantha",
     "comments": "Somebody threw out in Room 607 so I guess no beer for meetings ever",
-    "status": "I'm on it",
+    "status": "deleted",
     "deadline": "2025-07-17T00:00"
+  },
+  {
+    "task": "Take the company cat Lucky to the vet for her annual check.",
+    "due_date": "2025-07-17T00:20",
+    "priority": "low",
+    "assigner": "Hazel",
+    "comments": "The task involves taking care of the company pet, which may be important for maintaining good employee morale or company culture. Make sure to confirm any specific requirements with Hazel if necessary.",
+    "status": "to do",
+    "deadline": "2025-07-17T00:20",
+    "email_content": "Dear Alex\r\n\r\nPlease take the company cat Lucky to the vet for her annual check.\r\n\r\nThe vet is scheduled at July 17th 2025 11:20 AM\r\n\r\nBest regards\r\nHazel\r\n",
+    "source": "manual"
+  },
+  {
+    "task": "Fix the broken git",
+    "due_date": "2025-07-17T10:00",
+    "priority": "high",
+    "assigner": "Jesse",
+    "comments": "I need to fix it so that it won't bother me again!",
+    "status": "deleted",
+    "source": "manual",
+    "deadline": "2025-07-17T10:00"
+  },
+  {
+    "task": "Take the company cat Sunny to the annual vet check.",
+    "due_date": "2025-07-17T08:00",
+    "priority": "high",
+    "assigner": "Lisa",
+    "comments": "Ensure Sunny is ready and comfortable for the vet visit at the scheduled time.",
+    "status": "I'm on it",
+    "deadline": "2025-07-17T08:00",
+    "email_content": "Dear Alex\r\n\r\nPlease take the company cat sunny for annual vet check\r\n\r\nThe vet is scheduled at 8:00 AM July 17th 2025\r\n\r\nBest Regard\r\nLisa\r\n",
+    "source": "manual"
+  },
+  {
+    "task": "Get cat food for the company",
+    "due_date": "2025-07-17T10:00",
+    "priority": "medium",
+    "assigner": "",
+    "comments": "",
+    "status": "finished",
+    "source": "manual",
+    "deadline": "2025-07-17T10:00"
   }
 ]
