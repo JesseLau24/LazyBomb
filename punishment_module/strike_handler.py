@@ -2,7 +2,7 @@
 
 import json
 import os
-from datetime import datetime
+from datetime import datetime, timedelta
 from typing import Dict
 from utils.constants import STRIKE_LOG_PATH
 from punishment_module.meme_player import play_random_alert_video  # ✅ 使用统一播放接口
@@ -23,7 +23,7 @@ def check_and_strike(task: Dict):
 
 def record_strike(task: Dict):
     """
-    将被罚任务记录到 data/strike_log.json
+    将被罚任务记录到 data/strike_log.json，避免重复记录（1小时内）。
     """
     record = {
         "task": task.get("task"),
@@ -39,6 +39,18 @@ def record_strike(task: Dict):
                 log = json.load(f)
         except Exception as e:
             print(f"⚠️ Failed to read existing strike log: {e}")
+
+    # ✅ 检查是否已在1小时内被记录过
+    now = datetime.now()
+    for entry in log[::-1]:  # 逆序查找最新记录更快
+        if entry.get("task") == record["task"]:
+            try:
+                last_time = datetime.fromisoformat(entry["strike_time"])
+                if now - last_time < timedelta(hours=1):  # ✅ 阈值可改（如 5 分钟）
+                    print("⏳ Strike already recorded recently. Skipping.")
+                    return
+            except Exception as e:
+                print(f"⚠️ Error parsing strike_time: {e}")
 
     log.append(record)
 

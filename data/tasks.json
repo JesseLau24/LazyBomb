@@ -238,5 +238,15 @@
     "status": "finished",
     "source": "manual",
     "deadline": "2025-07-17T10:00"
+  },
+  {
+    "task": "Test if the updated new strike_handler logic",
+    "due_date": "2025-07-17T13:50",
+    "priority": "high",
+    "assigner": "User",
+    "comments": "I guess this would be added... once every hour",
+    "status": "to do",
+    "source": "manual",
+    "deadline": "2025-07-17T13:50"
   }
 ]
