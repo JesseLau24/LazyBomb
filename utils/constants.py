@@ -16,3 +16,13 @@ ALERT_VIDEO_DIR = os.path.join(BASE_DIR, "assets", "alerts")
 
 # ✅ 支持的视频扩展名
 ALERT_VIDEO_EXT = ".mp4"
+
+# Preset 模板路径
+PRESET_HEALTH_GOALS_PATH = os.path.join(BASE_DIR, "dailylog", "presets", "health_goals.json")
+PRESET_HAPPINESS_TASKS_PATH = os.path.join(BASE_DIR, "dailylog", "presets", "happiness_activities.json")
+
+# ✅ 每日健康目标和乐趣任务用户上传内容路径
+DAILY_LOG_FILE_TEMPLATE = os.path.join(DATA_DIR, 'daily_logs', '{year}.json')
+
+# ✅ 图片存储路径
+IMAGE_DIR = os.path.join("static", "images")

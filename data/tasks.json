@@ -10,26 +10,6 @@
     "email_content": "Dear Sales Team\r\n\r\nI hope this email finds you well\r\n\r\nPlease send the file of updated client information to Anderson in our IT\r\nteam so that he could update the client info database. The deadline is 15th\r\nJuly 2025 19:00\r\nThis is really important!\r\n\r\nBest Regards\r\nIT Department\r\n"
   },
   {
-    "task": "Deploy the latest software patch to all servers",
-    "due_date": "2025-07-23T09:45",
-    "priority": "low",
-    "assigner": "Aaron Blackwell",
-    "comments": "This task involves deploying a new software update across all relevant systems.",
-    "status": "finished",
-    "deadline": "2025-07-23T09:45",
-    "email_content": "Dear DevOps;\r\n\r\nI hope this email finds you well!\r\n\r\nPlease make sure to deploy the latest software patch to all servers by July\r\n12th 2025 9:45 AM.\r\n\r\nPS: make sure to verify the backup is complete before deployment and report\r\nif there are any issues.\r\n\r\nBest Regards\r\nAaron Blackwell\r\n"
-  },
-  {
-    "task": "Verify the backup is complete before deployment and report any issues",
-    "due_date": "2025-07-23T09:45",
-    "priority": "medium",
-    "assigner": "Aaron Blackwell",
-    "comments": "Ensure that all data is properly backed up prior to deploying the patch, and inform if there are any problems.",
-    "status": "finished",
-    "deadline": "2025-07-23T09:45",
-    "email_content": "Dear DevOps;\r\n\r\nI hope this email finds you well!\r\n\r\nPlease make sure to deploy the latest software patch to all servers by July\r\n12th 2025 9:45 AM.\r\n\r\nPS: make sure to verify the backup is complete before deployment and report\r\nif there are any issues.\r\n\r\nBest Regards\r\nAaron Blackwell\r\n"
-  },
-  {
     "task": "Prepare the quarterly budget report for the Accounting Team.",
     "due_date": "2025-07-23T14:09",
     "priority": "it's complicated",
@@ -40,22 +20,12 @@
     "email_content": "Dear Accounting Team\r\n\r\nI hope this email finds you well!\r\n\r\nPlease kindly prepare the quarterly budget report by July 12th 2025 14:09.\r\nHighlight any significant variances.\r\n\r\nBest regards\r\nAlex\r\n"
   },
   {
-    "task": "Pick up the new uniform",
-    "due_date": "2025-07-23T14:50",
-    "priority": "high",
-    "assigner": "Roth",
-    "comments": "The task is to pick up a new uniform from the coffee room.",
-    "status": "finished",
-    "deadline": "2025-07-23T14:50",
-    "email_content": "Dear Alex,\r\n\r\nplease pick up the new uniform at coffee room by 14:50 12th July 2025\r\n\r\nBest Regards\r\nRoth\r\n"
-  },
-  {
     "task": "Pick up Jerry Smith at the airport",
     "due_date": "2025-07-23T15:17",
     "priority": "medium",
     "assigner": "Ryne",
     "comments": "The driver will be waiting for you at the entrance of our building.",
-    "status": "I'm on it",
+    "status": "to do",
     "deadline": "2025-07-23T15:17",
     "email_content": "Dear Alex\r\n\r\nPlease pick up Jerry Smith at the airport.\r\n\r\nThe driver would be waiting for you at the entrance of our building at\r\n15:17 July 12 2025.\r\n\r\nBest regards\r\nRyne\r\n"
   },
@@ -65,19 +35,9 @@
     "priority": "high",
     "assigner": "Lisa Thompson",
     "comments": "This task involves updating a personal or professional online profile to reflect the company's current branding with the specified elements. Ensure the new image is saved in the correct format and dimensions as required by the platform.",
-    "status": "I'm on it",
+    "status": "to do",
     "deadline": "2025-07-23T17:00",
     "email_content": "Dear Alex\r\n\r\nI hope this email finds you well\r\n\r\nPlease update your new profile picture with a new company uniform and new\r\nlogo as background. Deadline is by 17:00 July 12th 2025.\r\n\r\nBest regards\r\nLisa Thompson\r\n"
-  },
-  {
-    "task": "Upload class notes from the financial accounting course training to Teams Cloud",
-    "due_date": "2025-07-23T22:15",
-    "priority": "high",
-    "assigner": "Lucky",
-    "comments": "This task is for everyone who attended the financial accounting course training.",
-    "status": "deleted",
-    "deadline": "2025-07-23T22:15",
-    "email_content": "Dear All\r\n\r\nI hope this email finds you well\r\n\r\nWe have just finished the financial accounting course training and everyone\r\nneeds to upload class note to teams cloud by 22:15 July 12th 2025\r\n\r\nBest regards\r\nLucky\r\n"
   },
   {
     "task": "Finish the new product catalog",
@@ -87,16 +47,6 @@
     "comments": "Ensure all necessary products are included and properly categorized.",
     "status": "to do",
     "deadline": "2025-07-24T22:45",
-    "email_content": "Dear Alex\r\n\r\nI hope this email finds you well.\r\n\r\nPlease finish and then upload the new product catalog. The deadline is by\r\n22:45 July 12th 2025\r\n\r\nBest regards\r\nTony\r\n"
-  },
-  {
-    "task": "Upload the new product catalog to the designated location or platform",
-    "due_date": "2025-07-17T00:50",
-    "priority": "low",
-    "assigner": "Tony",
-    "comments": "The upload should be completed after finishing the catalog.",
-    "status": "I'm on it",
-    "deadline": "2025-07-17T00:50",
     "email_content": "Dear Alex\r\n\r\nI hope this email finds you well.\r\n\r\nPlease finish and then upload the new product catalog. The deadline is by\r\n22:45 July 12th 2025\r\n\r\nBest regards\r\nTony\r\n"
   },
   {
@@ -130,16 +80,6 @@
     "email_content": "Dear All\r\n\r\nAs we already moved from WPS to MicroSoft Office, all shall install the\r\nlatest Office 365 by today (17:30 July 13th 2025).\r\n\r\nPlease make sure to activate it with our public account and don't use your\r\npersonal account. if you don't have our public account key, please forward\r\nthis email to IT department and ask them for it.\r\n\r\nBest regards\r\nLisa Torrello\r\nProject Manager\r\n"
   },
   {
-    "task": "Install the latest Ubuntu Pro LTS on all new laptops purchased for the Dev team.",
-    "due_date": "2025-07-23T17:00",
-    "priority": "it's complicated",
-    "assigner": "Thomas, IT Department",
-    "comments": "This task is crucial as the laptops will be used by the Dev team the following day. Ensure all new laptops are updated with the latest version.",
-    "status": "deleted",
-    "deadline": "2025-07-23T17:00",
-    "email_content": "Dear Alex\r\n\r\nI hope this email finds you well\r\n\r\nPlease install the latest Ubunto Pro LTS to all the new laptops we\r\npurchased for our Dev team by 17:00 July 13th 2025.\r\n\r\nThis is really important because they would be using it tomorrow!\r\n\r\nBest regards\r\nThomas\r\nIT Department\r\n"
-  },
-  {
     "task": "Translate clients' emails into German and Japanese.",
     "due_date": "2025-07-24T23:55",
     "priority": "high",
@@ -170,83 +110,47 @@
     "email_content": "Dear Alex\r\n\r\nI hope this email finds you well.\r\n\r\nPlease review the new terms of the contract to see if there are any issues.\r\n\r\nDeadline for this task is by 21:00 July 16th 2025\r\n\r\nBest regards\r\nPolly\r\n"
   },
   {
-    "task": "Take the company car to the 4S store for service.",
-    "due_date": "2025-07-17T00:15",
-    "priority": "low",
-    "assigner": "Samantha",
-    "comments": "The car requires service after not being serviced for 5 years.",
-    "status": "finished",
-    "deadline": "2025-07-17T00:15",
-    "email_content": "Dear Alex\r\n\r\nOur company car hasn't been serviced for 5 years and now it requires\r\nservice.\r\n\r\nPlease take it to 4S store at 00:15AM July 17th 2025\r\n\r\nBest regards\r\nSamantha\r\n"
-  },
-  {
-    "task": "Wash the car",
-    "due_date": "2025-07-17T00:30",
-    "priority": "high",
-    "assigner": "Samantha",
-    "comments": "The car is covered in poop......So i guess I'll need to pay extra to get it cleaned",
+    "task": "Meet up with Matiss online via Zoom",
+    "due_date": "2025-07-22T14:55",
+    "priority": "",
+    "assigner": "Alex",
+    "comments": "The meeting originally scheduled in person has been moved to an online session on Zoom.",
     "status": "to do",
-    "deadline": "2025-07-17T00:30"
-  },
-  {
-    "task": "Clean the office",
-    "due_date": "2025-07-17T00:00",
-    "priority": "it's complicated",
-    "assigner": "Samantha",
-    "comments": "Somebody threw out in Room 607 so I guess no beer for meetings ever",
-    "status": "deleted",
-    "deadline": "2025-07-17T00:00"
-  },
-  {
-    "task": "Take the company cat Lucky to the vet for her annual check.",
-    "due_date": "2025-07-17T00:20",
-    "priority": "low",
-    "assigner": "Hazel",
-    "comments": "The task involves taking care of the company pet, which may be important for maintaining good employee morale or company culture. Make sure to confirm any specific requirements with Hazel if necessary.",
-    "status": "to do",
-    "deadline": "2025-07-17T00:20",
-    "email_content": "Dear Alex\r\n\r\nPlease take the company cat Lucky to the vet for her annual check.\r\n\r\nThe vet is scheduled at July 17th 2025 11:20 AM\r\n\r\nBest regards\r\nHazel\r\n",
+    "deadline": "2025-07-22T14:55",
+    "email_content": "Dear Jesse\r\n\r\nMeet up with Matiss has been moved to online on July 22nd 2025 16:45 on\r\nZoom.\r\n\r\nBest Regards\r\nAlex\r\n",
     "source": "manual"
   },
   {
-    "task": "Fix the broken git",
-    "due_date": "2025-07-17T10:00",
-    "priority": "high",
+    "task": "Check the newly added two functions of health log and daily fun log inside the specified areas",
+    "due_date": "2025-07-22T13:35",
+    "priority": null,
     "assigner": "Jesse",
-    "comments": "I need to fix it so that it won't bother me again!",
-    "status": "deleted",
-    "source": "manual",
-    "deadline": "2025-07-17T10:00"
-  },
-  {
-    "task": "Take the company cat Sunny to the annual vet check.",
-    "due_date": "2025-07-17T08:00",
-    "priority": "high",
-    "assigner": "Lisa",
-    "comments": "Ensure Sunny is ready and comfortable for the vet visit at the scheduled time.",
-    "status": "I'm on it",
-    "deadline": "2025-07-17T08:00",
-    "email_content": "Dear Alex\r\n\r\nPlease take the company cat sunny for annual vet check\r\n\r\nThe vet is scheduled at 8:00 AM July 17th 2025\r\n\r\nBest Regard\r\nLisa\r\n",
+    "comments": "The task involves verifying new functionalities within specific sections.",
+    "status": "finished",
+    "deadline": "2025-07-22T13:35",
+    "email_content": "Dear Alex\r\n\r\nPlease check the newly added two functions of health log and daily fun log\r\ninside these two bubbles by 13:35 July 22nd 2025\r\n\r\nBest Regards\r\nJesse\r\n",
     "source": "manual"
   },
   {
-    "task": "Get cat food for the company",
-    "due_date": "2025-07-17T10:00",
-    "priority": "medium",
-    "assigner": "",
-    "comments": "",
-    "status": "finished",
-    "source": "manual",
-    "deadline": "2025-07-17T10:00"
+    "task": "Work on using the data/daily_log/{year}.json log and the image stored to create the page for online daily log.",
+    "due_date": "2025-07-23T21:00",
+    "priority": null,
+    "assigner": "Jesse",
+    "comments": "The task involves utilizing specific logs and images to develop an online page. Ensure access to necessary data and tools before starting.",
+    "status": "to do",
+    "deadline": "2025-07-23T21:00",
+    "email_content": "Dear Alex\r\n\r\nPlease work on how to use the data/daily_log/{year}.json log and the image\r\nstored to create the page for online daily log.\r\n\r\nDeadline is : 21:00 July 23rd 2025\r\n\r\nBest regards\r\nJesse\r\n",
+    "source": "manual"
   },
   {
-    "task": "Test if the updated new strike_handler logic",
-    "due_date": "2025-07-17T13:50",
-    "priority": "high",
-    "assigner": "User",
-    "comments": "I guess this would be added... once every hour",
+    "task": "Check if it's possible to randomly extract daily fun activities from a preset JSON file.",
+    "due_date": "2025-07-22T16:00",
+    "priority": null,
+    "assigner": "Jesse",
+    "comments": "Ensure the functionality can be implemented with the given dataset and requirements.",
     "status": "to do",
-    "source": "manual",
-    "deadline": "2025-07-17T13:50"
+    "deadline": "2025-07-22T16:00",
+    "email_content": "Dear Alex\r\n\r\nPlease check if the function of randomly extract daily fun activities from\r\npreset json is possible.\r\n\r\nDeadline is  22 july 2025 16:00\r\n\r\nBest regards\r\nJesse\r\n",
+    "source": "manual"
   }
 ]

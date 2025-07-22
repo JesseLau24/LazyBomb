@@ -4,6 +4,7 @@ from task_storage.task_status_updater import update_task_status
 from task_storage.task_writer import append_tasks  
 from utils.html_generator import generate_task_html_from_json
 from utils.constants import TASKS_JSON_PATH
+from dailylog.health_tracker import get_today_health_goals, update_health_goal_status, update_health_status
 import json
 import os
 
@@ -146,6 +147,94 @@ def add_task():
 
     append_tasks([new_task])
     return jsonify({"message": "Task added"}), 200
+
+@app.route('/get_health_status', methods=['GET'])
+def get_health_status():
+    try:
+        result = get_today_health_goals()
+        return jsonify({"health_goals": result}), 200  # ✅ 用 dict 包裹
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+
+# task_status_api.py 中的 update_health_goal 路由示例
+@app.route("/update_health_goal", methods=["POST"])
+def update_health_goal():
+    try:
+        content = request.get_json()
+        goal_index = int(content.get("goal_index"))
+        done = content.get("done")
+
+        print(f"[DEBUG] Updating health goal index {goal_index} to {done}")
+        success = update_health_status(goal_index, done)
+
+        if success:
+            return jsonify({"status": "ok"}), 200
+        else:
+            return jsonify({"status": "failed", "reason": "index out of range"}), 400
+    except Exception as e:
+        print(f"[ERROR] update_health_goal failed: {e}")
+        return jsonify({"status": "error", "message": str(e)}), 500
+
+
+
+
+@app.route("/get_happiness_today")
+def get_happiness_today():
+    from dailylog.happiness_engine import get_today_happiness_task, initialize_today_happiness_task
+
+    refresh = request.args.get("refresh", "false").lower() == "true"
+
+    if refresh:
+        task = initialize_today_happiness_task()
+    else:
+        task = get_today_happiness_task()
+        if not task:
+            task = initialize_today_happiness_task()
+
+    return jsonify(task)
+
+@app.route("/update_happiness_entry", methods=["POST"])
+def update_happiness_entry():
+    try:
+        from dailylog.happiness_engine import update_today_happiness_reflection
+        from utils.constants import IMAGE_DIR
+        from werkzeug.utils import secure_filename
+        import datetime
+
+        # 确保 IMAGE_DIR 存在（如 static/images）
+        os.makedirs(IMAGE_DIR, exist_ok=True)
+
+        # 读取文字反思内容
+        reflection = request.form.get("reflection", "").strip()
+
+        # 处理上传图片
+        image = request.files.get("photo")
+        image_path = ""
+
+        if image:
+            timestamp = datetime.datetime.now().strftime("%Y-%m-%d_%H%M%S")
+            ext = os.path.splitext(image.filename)[1] or ".jpg"
+            filename = secure_filename(f"{timestamp}{ext}")
+
+            # 保存图片到 IMAGE_DIR
+            abs_path = os.path.join(IMAGE_DIR, filename)
+            image.save(abs_path)
+
+            # 转换为前端可访问的相对路径（static/images/xxx.jpg）
+            rel_path = os.path.relpath(abs_path, start="static").replace("\\", "/")
+            image_path = f"static/{rel_path}"
+
+        # 写入日志
+        update_today_happiness_reflection(reflection=reflection, image_path=image_path)
+
+        return jsonify({"status": "success"}), 200
+
+    except Exception as e:
+        import traceback
+        traceback.print_exc()
+        return jsonify({"status": "error", "message": str(e)}), 500
+
 
 if __name__ == '__main__':
     app.run(port=5000)

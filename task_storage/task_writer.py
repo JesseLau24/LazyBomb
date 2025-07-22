@@ -11,7 +11,7 @@ def load_tasks(filename: str = TASK_FILE) -> List[Dict]:
     Load existing tasks from a JSON file. Return empty list if file doesn't exist.
     """
     if os.path.exists(filename):
-        with open(filename, "r") as f:
+        with open(filename, "r", encoding="utf-8") as f:
             return json.load(f)
     else:
         return []
@@ -20,7 +20,7 @@ def save_tasks(tasks: List[Dict], filename: str = TASK_FILE):
     """
     Save list of task dicts to a JSON file.
     """
-    with open(filename, "w") as f:
+    with open(filename, "w", encoding="utf-8") as f:
         json.dump(tasks, f, indent=2)
 
 def append_tasks(new_tasks: List[Dict], filename: str = TASK_FILE):

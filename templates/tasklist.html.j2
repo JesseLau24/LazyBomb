@@ -65,6 +65,32 @@
 
     <h1>🧨 LazyBomb Task List</h1>
 
+    <!-- 💚 健康 & 快乐每日气泡区域 -->
+    <div id="daily-bubbles" style="display: flex; gap: 30px; margin-bottom: 30px;">
+        <!-- 🩺 健康气泡 -->
+        <div id="health-bubble" style="flex: 1; padding: 15px; border-radius: 15px; background: #e7f9ee; box-shadow: 0 0 4px rgba(0,0,0,0.1);">
+            <h2>🏥 Daily Health Goals</h2>
+            <form id="health-goals-form">
+                <!-- JS 动态填充 -->
+            </form>
+        </div>
+
+        <!-- 🌞 快乐气泡 -->
+        <div id="happiness-bubble" style="flex: 1; padding: 15px; border-radius: 15px; background: #fff4d6; box-shadow: 0 0 4px rgba(0,0,0,0.1);">
+            <h2>🎲 Happiness Task of the Day 
+                <button onclick="refreshHappinessTask()" style="margin-left: 10px;">🎲</button>
+            </h2>
+            <div id="happiness-task-text">Loading...</div>
+            <textarea id="happiness-reflection" rows="4" placeholder="Write your reflection here..." style="width: 100%; margin-top: 10px;"></textarea>
+            <div style="margin-top: 10px;">
+                <label for="happiness-photo">📷 Upload a photo:</label>
+                <input type="file" id="happiness-photo" accept="image/*" />
+            </div>
+            <button onclick="submitHappinessEntry()" style="margin-top: 10px;">💾 Save</button>
+        </div>
+    </div>
+
+
     <form action="/export_html" method="post">
         <button type="submit">📄 Export Static HTML Snapshot</button>
     </form>
@@ -254,6 +280,95 @@
                 const priA = priorityOrder[(a.dataset.priority ?? '').toLowerCase()] || 5;
                 const priB = priorityOrder[(b.dataset.priority ?? '').toLowerCase()] || 5;
                 return priA - priB;
+            });
+        }
+
+        fetch('/get_health_status')
+        .then(r => r.json())
+        .then(data => {
+            const form = document.getElementById('health-goals-form');
+            form.innerHTML = '';
+            data.health_goals.forEach((goal, index) => {
+                const id = `goal-${index}`;
+                form.innerHTML += `
+                    <label style="display: block; margin-bottom: 8px;">
+                        <input type="checkbox" id="${id}" ${goal.done ? 'checked' : ''} onchange="updateHealthGoal('${index}', this.checked)" />
+                        ${goal.goal}
+                    </label>`;
+            });
+        });
+
+
+        // ✅ 提交健康目标更新
+        function updateHealthGoal(index, done) {
+            fetch('/update_health_goal', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ goal_index: index, done: done })
+            })
+            .then(r => {
+                if (r.ok) {
+                    console.log('Health goal updated!');
+                } else {
+                    console.error('Failed to update goal');
+                }
+            });
+        }
+
+
+        // ✅ 加载快乐任务
+        function loadHappinessTask() {
+        fetch('/get_happiness_today')
+            .then(r => r.json())
+            .then(data => {
+            document.getElementById('happiness-task-text').innerText = data.task || 'No task today';
+            document.getElementById('happiness-reflection').value = data.reflection || '';
+            });
+        }
+        loadHappinessTask();
+
+        // ✅ 重新随机一个快乐任务
+        function refreshHappinessTask() {
+        fetch('/get_happiness_today?refresh=true')
+            .then(r => r.json())
+            .then(data => {
+            document.getElementById('happiness-task-text').innerText = data.task || 'No task today';
+            document.getElementById('happiness-reflection').value = '';
+            });
+        }
+
+        // ✅ 提交快乐任务记录
+        function submitHappinessEntry() {
+            const reflection = document.getElementById('happiness-reflection').value.trim();
+            const photoInput = document.getElementById('happiness-photo');
+            const photoFile = photoInput.files[0];
+
+            if (!reflection && !photoFile) {
+                alert("⚠️ Please write a reflection or upload a photo!");
+                return;
+            }
+
+            const formData = new FormData();
+            formData.append('reflection', reflection);
+            if (photoFile) formData.append('photo', photoFile);
+
+            fetch('/update_happiness_entry', {
+                method: 'POST',
+                body: formData
+            }).then(res => {
+                if (res.ok) {
+                    alert('✅ Saved!');
+                    // 清空字段
+                    document.getElementById('happiness-reflection').value = '';
+                    photoInput.value = '';
+                } else {
+                    alert('❌ Failed to save entry.');
+                }
+            }).catch(err => {
+                console.error(err);
+                alert('🚨 Error submitting entry.');
             });
         }
 

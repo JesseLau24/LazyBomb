@@ -28,5 +28,245 @@
     "deadline": "2025-07-17T13:15",
     "status": "to do",
     "strike_time": "2025-07-17T13:35:00.624716"
+  },
+  {
+    "task": "Upload the new product catalog to the designated location or platform",
+    "deadline": "2025-07-17T00:50",
+    "status": "I'm on it",
+    "strike_time": "2025-07-21T13:57:58.543240"
+  },
+  {
+    "task": "Wash the car",
+    "deadline": "2025-07-17T00:30",
+    "status": "to do",
+    "strike_time": "2025-07-21T13:57:58.555734"
+  },
+  {
+    "task": "Take the company cat Lucky to the vet for her annual check.",
+    "deadline": "2025-07-17T00:20",
+    "status": "to do",
+    "strike_time": "2025-07-21T13:57:58.573735"
+  },
+  {
+    "task": "Take the company cat Sunny to the annual vet check.",
+    "deadline": "2025-07-17T08:00",
+    "status": "I'm on it",
+    "strike_time": "2025-07-21T13:57:58.600143"
+  },
+  {
+    "task": "Test if the updated new strike_handler logic",
+    "deadline": "2025-07-17T13:50",
+    "status": "to do",
+    "strike_time": "2025-07-21T13:57:58.637343"
+  },
+  {
+    "task": "Get cat food for the company",
+    "deadline": "2025-07-17T10:00",
+    "status": "to do",
+    "strike_time": "2025-07-21T14:00:04.982758"
+  },
+  {
+    "task": "Upload the new product catalog to the designated location or platform",
+    "deadline": "2025-07-17T00:50",
+    "status": "I'm on it",
+    "strike_time": "2025-07-21T15:01:43.755241"
+  },
+  {
+    "task": "Take the company cat Lucky to the vet for her annual check.",
+    "deadline": "2025-07-17T00:20",
+    "status": "to do",
+    "strike_time": "2025-07-21T15:01:43.758243"
+  },
+  {
+    "task": "Take the company cat Sunny to the annual vet check.",
+    "deadline": "2025-07-17T08:00",
+    "status": "I'm on it",
+    "strike_time": "2025-07-21T15:01:43.784218"
+  },
+  {
+    "task": "Get cat food for the company",
+    "deadline": "2025-07-17T10:00",
+    "status": "to do",
+    "strike_time": "2025-07-21T15:01:43.802012"
+  },
+  {
+    "task": "Test if the updated new strike_handler logic",
+    "deadline": "2025-07-17T13:50",
+    "status": "to do",
+    "strike_time": "2025-07-21T15:01:43.819762"
+  },
+  {
+    "task": "Upload the new product catalog to the designated location or platform",
+    "deadline": "2025-07-17T00:50",
+    "status": "I'm on it",
+    "strike_time": "2025-07-21T16:22:42.667634"
+  },
+  {
+    "task": "Take the company cat Lucky to the vet for her annual check.",
+    "deadline": "2025-07-17T00:20",
+    "status": "to do",
+    "strike_time": "2025-07-21T16:22:42.670400"
+  },
+  {
+    "task": "Take the company cat Sunny to the annual vet check.",
+    "deadline": "2025-07-17T08:00",
+    "status": "I'm on it",
+    "strike_time": "2025-07-21T16:22:42.682116"
+  },
+  {
+    "task": "Get cat food for the company",
+    "deadline": "2025-07-17T10:00",
+    "status": "to do",
+    "strike_time": "2025-07-21T16:22:42.698776"
+  },
+  {
+    "task": "Test if the updated new strike_handler logic",
+    "deadline": "2025-07-17T13:50",
+    "status": "to do",
+    "strike_time": "2025-07-21T16:22:42.722743"
+  },
+  {
+    "task": "Check the two bubbles",
+    "deadline": "2025-07-21T15:10",
+    "status": "to do",
+    "strike_time": "2025-07-21T16:22:42.744729"
+  },
+  {
+    "task": "Upload the new product catalog to the designated location or platform",
+    "deadline": "2025-07-17T00:50",
+    "status": "I'm on it",
+    "strike_time": "2025-07-21T19:10:56.040806"
+  },
+  {
+    "task": "Take the company cat Lucky to the vet for her annual check.",
+    "deadline": "2025-07-17T00:20",
+    "status": "to do",
+    "strike_time": "2025-07-21T19:10:56.044251"
+  },
+  {
+    "task": "Take the company cat Sunny to the annual vet check.",
+    "deadline": "2025-07-17T08:00",
+    "status": "I'm on it",
+    "strike_time": "2025-07-21T19:10:56.065472"
+  },
+  {
+    "task": "Get cat food for the company",
+    "deadline": "2025-07-17T10:00",
+    "status": "to do",
+    "strike_time": "2025-07-21T19:10:56.096122"
+  },
+  {
+    "task": "Test if the updated new strike_handler logic",
+    "deadline": "2025-07-17T13:50",
+    "status": "to do",
+    "strike_time": "2025-07-21T19:10:56.120053"
+  },
+  {
+    "task": "Check the two bubbles",
+    "deadline": "2025-07-21T15:10",
+    "status": "to do",
+    "strike_time": "2025-07-21T19:10:56.144413"
+  },
+  {
+    "task": "Upload the new product catalog to the designated location or platform",
+    "deadline": "2025-07-17T00:50",
+    "status": "I'm on it",
+    "strike_time": "2025-07-21T20:21:12.416435"
+  },
+  {
+    "task": "Take the company cat Lucky to the vet for her annual check.",
+    "deadline": "2025-07-17T00:20",
+    "status": "to do",
+    "strike_time": "2025-07-21T20:21:12.431415"
+  },
+  {
+    "task": "Take the company cat Sunny to the annual vet check.",
+    "deadline": "2025-07-17T08:00",
+    "status": "I'm on it",
+    "strike_time": "2025-07-21T20:21:12.453752"
+  },
+  {
+    "task": "Get cat food for the company",
+    "deadline": "2025-07-17T10:00",
+    "status": "to do",
+    "strike_time": "2025-07-21T20:21:12.469460"
+  },
+  {
+    "task": "Test if the updated new strike_handler logic",
+    "deadline": "2025-07-17T13:50",
+    "status": "to do",
+    "strike_time": "2025-07-21T20:21:12.495025"
+  },
+  {
+    "task": "Check the two bubbles",
+    "deadline": "2025-07-21T15:10",
+    "status": "to do",
+    "strike_time": "2025-07-21T20:21:12.524934"
+  },
+  {
+    "task": "Debug the new module on Ollama Aget",
+    "deadline": "2025-07-18T19:21",
+    "status": "to do",
+    "strike_time": "2025-07-21T20:25:01.265087"
+  },
+  {
+    "task": "Upload the new product catalog to the designated location or platform",
+    "deadline": "2025-07-17T00:50",
+    "status": "I'm on it",
+    "strike_time": "2025-07-22T13:15:27.252628"
+  },
+  {
+    "task": "Take the company cat Lucky to the vet for her annual check.",
+    "deadline": "2025-07-17T00:20",
+    "status": "to do",
+    "strike_time": "2025-07-22T13:15:27.255154"
+  },
+  {
+    "task": "Take the company cat Sunny to the annual vet check.",
+    "deadline": "2025-07-17T08:00",
+    "status": "I'm on it",
+    "strike_time": "2025-07-22T13:15:27.271689"
+  },
+  {
+    "task": "Get cat food for the company",
+    "deadline": "2025-07-17T10:00",
+    "status": "to do",
+    "strike_time": "2025-07-22T13:15:27.296718"
+  },
+  {
+    "task": "Test if the updated new strike_handler logic",
+    "deadline": "2025-07-17T13:50",
+    "status": "to do",
+    "strike_time": "2025-07-22T13:15:27.320452"
+  },
+  {
+    "task": "Check the two bubbles",
+    "deadline": "2025-07-21T15:10",
+    "status": "to do",
+    "strike_time": "2025-07-22T13:15:27.348257"
+  },
+  {
+    "task": "Debug the new module on Ollama Aget",
+    "deadline": "2025-07-18T19:21",
+    "status": "to do",
+    "strike_time": "2025-07-22T13:15:27.377644"
+  },
+  {
+    "task": "Debug the new module on Ollama Agent",
+    "deadline": "2025-07-18T19:21",
+    "status": "I'm on it",
+    "strike_time": "2025-07-22T13:35:01.474509"
+  },
+  {
+    "task": "Check the newly added two functions of health log and daily fun log inside the specified areas",
+    "deadline": "2025-07-22T13:35",
+    "status": "to do",
+    "strike_time": "2025-07-22T13:50:00.622025"
+  },
+  {
+    "task": "Meet up with Matiss online via Zoom",
+    "deadline": "2025-07-22T14:55",
+    "status": "to do",
+    "strike_time": "2025-07-22T15:10:00.577656"
   }
 ]

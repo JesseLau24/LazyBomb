@@ -8,7 +8,7 @@ TIMESTAMP_FILE = LAST_PROCESSED_JSON_PATH
 
 def read_last_processed_timestamp(filename: str = TIMESTAMP_FILE) -> datetime:
     if os.path.exists(filename):
-        with open(filename, "r") as f:
+        with open(filename, "r", encoding="utf-8") as f:
             data = json.load(f)
             return datetime.fromisoformat(data.get("last_processed")).astimezone(timezone.utc)
     else:
@@ -18,5 +18,5 @@ def read_last_processed_timestamp(filename: str = TIMESTAMP_FILE) -> datetime:
 
 def write_last_processed_timestamp(timestamp: datetime, filename: str = TIMESTAMP_FILE):
     # Ensure timestamp is stored as UTC ISO string
-    with open(filename, "w") as f:
+    with open(filename, "w", encoding="utf-8") as f:
         json.dump({"last_processed": timestamp.astimezone(timezone.utc).isoformat()}, f)
