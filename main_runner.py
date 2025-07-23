@@ -7,6 +7,7 @@ from task_storage.task_writer import append_tasks
 from task_storage.task_parser import extract_task_list_from_output
 from utils.html_generator import generate_task_html_from_json
 from utils.constants import TASKS_JSON_PATH, LAST_PROCESSED_JSON_PATH  # ✅ 使用统一路径
+import uuid
 
 from datetime import timezone
 import json
@@ -47,7 +48,8 @@ def run_lazybomb():
         tasks = extract_task_list_from_output(response, debug=DEBUG_MODE)
         if tasks:
             for task in tasks:
-                task["email_content"] = body  # 给每个任务加邮件正文字段
+                task["email_content"] = body
+                task["id"] = str(uuid.uuid4())  # ✅ 添加唯一 task ID
             append_tasks(tasks, filename=TASKS_JSON_PATH)
 
         else:

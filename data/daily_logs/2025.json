@@ -1,5 +1,5 @@
 {
-  "2025-07-21": {
+  "2025-07-19": {
     "health_goals": [
       {
         "goal": "Take a 20-minute nap",
@@ -23,13 +23,43 @@
       }
     ],
     "happiness_task": {
-      "task": "Listen to your favorite childhood song",
+      "task": "Take a picture of a bird",
       "custom_text": "",
-      "image_path": "",
-      "reflection": ""
+      "image_path": "static/images/2025-07-19_235743.jpg",
+      "reflection": "I have a wallpaper of a dog"
     }
   },
-  "2025-07-22": {
+  "2025-07-20": {
+    "happiness_task": {
+      "task": "Call an old friend",
+      "custom_text": "",
+      "image_path": "static/images/2025-07-20_000926.png",
+      "reflection": "I don't have any friends. So I am not going to call anyone.\r\n\r\nBut I do have some awesome wallpapers. Here is one!"
+    },
+    "health_goals": [
+      {
+        "goal": "Take a 20-minute nap",
+        "done": true
+      },
+      {
+        "goal": "Drink 5 cups of water",
+        "done": true
+      },
+      {
+        "goal": "Do 30 minutes of cardio",
+        "done": true
+      },
+      {
+        "goal": "Eat at least one fruit",
+        "done": true
+      },
+      {
+        "goal": "Sleep before midnight",
+        "done": true
+      }
+    ]
+  },
+  "2025-07-21": {
     "health_goals": [
       {
         "goal": "Take a 20-minute nap",
@@ -53,10 +83,40 @@
       }
     ],
     "happiness_task": {
-      "task": "Write a thank-you message",
+      "task": "Draw something on paper",
       "custom_text": "",
-      "image_path": "static/images/2025-07-22_145937.jpg",
-      "reflection": "Testing, I hope this time it works"
+      "image_path": "static/images/2025-07-21_145244.jpg",
+      "reflection": "I guess I need to add more happiness task of the day. Here is another wallpaper"
+    }
+  },
+  "2025-07-22": {
+    "health_goals": [
+      {
+        "goal": "Take a 20-minute nap",
+        "done": true
+      },
+      {
+        "goal": "Drink 5 cups of water",
+        "done": true
+      },
+      {
+        "goal": "Do 30 minutes of cardio",
+        "done": true
+      },
+      {
+        "goal": "Eat at least one fruit",
+        "done": true
+      },
+      {
+        "goal": "Sleep before midnight",
+        "done": true
+      }
+    ],
+    "happiness_task": {
+      "task": "Take a picture of a bird",
+      "custom_text": "",
+      "image_path": "static/images/2025-07-22_150240.jpg",
+      "reflection": "I don't want to... But here is a wall paper"
     }
   }
 }

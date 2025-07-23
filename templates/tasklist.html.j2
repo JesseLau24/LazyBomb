@@ -136,7 +136,7 @@
                             💬 <em>Comments:</em> {{ task.comments or 'None' | e }}<br>
                             <label>Status:
                                 <select 
-                                    data-task="{{ task.task | e }}" 
+                                    data-task="{{ task.id | e }}" 
                                     data-prev="{{ task.status }}"
                                     onchange="updateStatus(this)">
                                     <option value="to do" {% if task.status == 'to do' %}selected{% endif %}>to do</option>
@@ -146,10 +146,10 @@
                             </label>
                             <button onclick='openEditModal({{ task | tojson | safe }})'>✏️ Edit</button>
                             {% if task.status == 'deleted' %}
-                            <button onclick="restoreTask('{{ task.task }}')">♻️ Restore</button>
-                            <button onclick="deleteForever('{{ task.task }}')">🧨 Delete Forever</button>
+                            <button onclick="restoreTask('{{ task.id }}')">♻️ Restore</button>
+                            <button onclick="deleteForever('{{ task.id }}')">🧨 Delete Forever</button>
                             {% else %}
-                            <button onclick="deleteTask('{{ task.task }}')">🗑️ Delete</button>
+                            <button onclick="deleteTask('{{ task.id }}')">🗑️ Delete</button>
                             {% endif %}
                         </li>
                         {% endfor %}
@@ -164,7 +164,7 @@
     <div class="modal" id="editModal">
         <div class="modal-content">
             <h3>Edit Task</h3>
-            <input type="hidden" id="original-task-name">
+            <input type="hidden" id="edit-task-id">
             <label>Task: <input id="edit-task-name"></label><br><br>
             <label>Due Date: <input type="datetime-local" id="edit-due-date"></label><br><br>
             <label>Priority:
@@ -223,13 +223,13 @@
         }
 
         async function updateStatus(selectElem) {
-            const taskName = selectElem.getAttribute('data-task');
+            const taskId = selectElem.getAttribute('data-task');  // ✅ 用 id 而非 task name
             const newStatus = selectElem.value;
             try {
                 const res = await fetch('/update_status', {
                     method: 'POST',
                     headers: {'Content-Type': 'application/json'},
-                    body: JSON.stringify({task: taskName, status: newStatus})
+                    body: JSON.stringify({ id: taskId, status: newStatus })  // ✅ 传 id
                 });
                 const data = await res.json();
                 if (!res.ok) {
@@ -244,6 +244,7 @@
                 selectElem.value = selectElem.getAttribute('data-prev');
             }
         }
+
 
         function updateTaskStyle(liElem, status) {
             liElem.classList.remove('status-todo', 'status-imonit', 'status-finished');
@@ -372,62 +373,81 @@
             });
         }
 
-        async function deleteTask(taskName) {
-            if (!confirm(`Are you sure you want to delete "${taskName}"?`)) return;
+        async function deleteTask(taskId) {
             await fetch('/delete_task', {
                 method: 'POST',
                 headers: {'Content-Type': 'application/json'},
-                body: JSON.stringify({task: taskName})
+                body: JSON.stringify({id: taskId})
             });
             location.reload();
         }
 
-        async function restoreTask(taskName) {
+
+        async function restoreTask(taskId) {
             await fetch('/restore_task', {
                 method: 'POST',
                 headers: {'Content-Type': 'application/json'},
-                body: JSON.stringify({task: taskName})
+                body: JSON.stringify({id: taskId})
             });
             location.reload();
         }
 
-        async function deleteForever(taskName) {
-            if (!confirm(`🚨 Permanently delete "${taskName}"? This cannot be undone.`)) return;
+        async function deleteForever(taskId) {
+            if (!confirm(`🚨 Permanently delete "${taskId}"? This cannot be undone.`)) return;
             await fetch('/delete_forever', {
                 method: 'POST',
                 headers: {'Content-Type': 'application/json'},
-                body: JSON.stringify({task: taskName})
+                body: JSON.stringify({id: taskId})
             });
             location.reload();
         }
 
         function openEditModal(task) {
+            document.getElementById('edit-task-id').value = task.id || '';  // ✅ 新增，确保传 id
             document.getElementById('edit-task-name').value = task.task || '';
             document.getElementById('edit-due-date').value = task.due_date || '';
             document.getElementById('edit-priority').value = task.priority || '';
             document.getElementById('edit-assigner').value = task.assigner || '';
             document.getElementById('edit-comments').value = task.comments || '';
-            document.getElementById('original-task-name').value = task.task;
             document.getElementById('editModal').style.display = 'flex';
         }
 
         async function submitEditForm() {
-            const originalTask = document.getElementById('original-task-name').value;
+            const originalTaskId = document.getElementById('edit-task-id').value;
             const updates = {
                 task: document.getElementById('edit-task-name').value,
                 due_date: document.getElementById('edit-due-date').value,
-                deadline: document.getElementById('edit-due-date').value,
+                deadline: document.getElementById('edit-due-date').value,  // 兼容后端结构
                 priority: document.getElementById('edit-priority').value,
                 assigner: document.getElementById('edit-assigner').value,
                 comments: document.getElementById('edit-comments').value
             };
-            await fetch('/edit_task', {
-                method: 'POST',
-                headers: {'Content-Type': 'application/json'},
-                body: JSON.stringify({task: originalTask, updates})
-            });
-            location.reload();
+
+            try {
+                const res = await fetch('/edit_task', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({
+                        id: originalTaskId,
+                        updates: updates
+                    })
+                });
+
+                const result = await res.json();
+                if (!res.ok) {
+                    alert("❌ Failed to save: " + result.error);
+                } else {
+                    alert("✅ Task updated!");
+                    location.reload();
+                }
+
+            } catch (err) {
+                alert("🚨 Error submitting edit: " + err.message);
+                console.error(err);
+            }
         }
+
+
 
         async function submitNewTask() {
             const newTask = {
@@ -437,13 +457,19 @@
                 assigner: document.getElementById('new-assigner').value,
                 comments: document.getElementById('new-comments').value
             };
+
+            // ✅ 在这里加上唯一 ID
+            newTask.id = crypto.randomUUID();
+
             await fetch('/add_task', {
                 method: 'POST',
                 headers: {'Content-Type': 'application/json'},
                 body: JSON.stringify(newTask)
             });
+
             location.reload();
         }
+
 
     </script>
 </body>

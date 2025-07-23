@@ -33,12 +33,26 @@ def show_task_list():
 @app.route('/update_status', methods=['POST'])
 def update_status():
     data = request.get_json()
-    task_name = data.get('task')
+    task_id = data.get('id')
     new_status = data.get('status')
-    if not task_name or not new_status:
-        return jsonify({"error": "Missing 'task' or 'status' in request"}), 400
-    success = update_task_status(task_name, new_status)
-    return jsonify({"message": "Status updated" if success else "Task not found"}), 200 if success else 404
+
+    if not task_id or not new_status:
+        return jsonify({"error": "Missing 'id' or 'status' in request"}), 400
+
+    tasks = load_tasks()
+    updated = False
+    for t in tasks:
+        if t.get("id") == task_id:
+            t["status"] = new_status
+            updated = True
+            break
+
+    if updated:
+        save_tasks(tasks)
+        return jsonify({"message": "Status updated"}), 200
+    else:
+        return jsonify({"error": "Task not found"}), 404
+
 
 @app.route('/export_html', methods=['POST'])
 def export_static_html():
@@ -50,11 +64,11 @@ def export_static_html():
 @app.route('/delete_task', methods=['POST'])
 def delete_task():
     data = request.get_json()
-    task_name = data.get("task")
+    task_id = data.get("id")
     tasks = load_tasks()
     found = False
     for t in tasks:
-        if t.get("task") == task_name:
+        if t.get("id") == task_id:
             t["status"] = "deleted"
             found = True
             break
@@ -66,11 +80,11 @@ def delete_task():
 @app.route('/restore_task', methods=['POST'])
 def restore_task():
     data = request.get_json()
-    task_name = data.get("task")
+    task_id = data.get("id")
     tasks = load_tasks()
     restored = False
     for t in tasks:
-        if t.get("task") == task_name and t.get("status") == "deleted":
+        if t.get("id") == task_id and t.get("status") == "deleted":
             t["status"] = "to do"
             restored = True
             break
@@ -82,37 +96,37 @@ def restore_task():
 @app.route('/edit_task', methods=['POST'])
 def edit_task():
     data = request.get_json()
-    task_name = data.get("task")
+    task_id = data.get("id")
     updates = data.get("updates", {})
-    if not task_name or not updates:
-        return jsonify({"error": "Missing task name or updates"}), 400
+
+    # 防止 updates 中不小心带入 id 字段，覆盖了原来的 task["task"]
+    updates.pop("id", None)
 
     tasks = load_tasks()
-    updated = False
-    for t in tasks:
-        if t.get("task") == task_name:
-            t.update(updates)
-            # ✅ 若更新了 due_date，就自动更新 deadline 字段，保持同步
-            if "due_date" in updates:
-                t["deadline"] = updates["due_date"]
-            updated = True
+    found = False
+    for task in tasks:
+        if task.get("id") == task_id:
+            task.update(updates)
+            found = True
             break
-    if updated:
+
+    if found:
         save_tasks(tasks)
         return jsonify({"message": "Task updated"}), 200
     return jsonify({"error": "Task not found"}), 404
 
+
 @app.route('/merge_tasks', methods=['POST'])
 def merge_tasks():
     data = request.get_json()
-    task_names = data.get("tasks", [])
+    task_ids = data.get("id", [])
     merged_task = data.get("merged_task", {})
-    if len(task_names) < 2 or not merged_task:
+    if len(task_ids) < 2 or not merged_task:
         return jsonify({"error": "Need at least two tasks and a merged task definition"}), 400
     tasks = load_tasks()
     kept_tasks = []
     for t in tasks:
-        if t.get("task") in task_names:
+        if t.get("id") in task_ids:
             continue
         kept_tasks.append(t)
     kept_tasks.append(merged_task)
@@ -122,9 +136,9 @@ def merge_tasks():
 @app.route('/delete_forever', methods=['POST'])
 def delete_forever():
     data = request.get_json()
-    task_name = data.get("task")
+    task_id = data.get("id")
     tasks = load_tasks()
-    filtered_tasks = [t for t in tasks if t.get("task") != task_name]
+    filtered_tasks = [t for t in tasks if t.get("id") != task_id]
     if len(filtered_tasks) == len(tasks):
         return jsonify({"error": "Task not found"}), 404
     save_tasks(filtered_tasks)
@@ -175,9 +189,6 @@ def update_health_goal():
     except Exception as e:
         print(f"[ERROR] update_health_goal failed: {e}")
         return jsonify({"status": "error", "message": str(e)}), 500
-
-
-
 
 @app.route("/get_happiness_today")
 def get_happiness_today():
