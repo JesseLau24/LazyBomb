@@ -118,5 +118,65 @@
       "image_path": "static/images/2025-07-22_150240.jpg",
       "reflection": "I don't want to... But here is a wall paper"
     }
+  },
+  "2025-07-23": {
+    "health_goals": [
+      {
+        "goal": "Take a 20-minute nap",
+        "done": true
+      },
+      {
+        "goal": "Drink 5 cups of water",
+        "done": true
+      },
+      {
+        "goal": "Do 30 minutes of cardio",
+        "done": true
+      },
+      {
+        "goal": "Eat at least one fruit",
+        "done": false
+      },
+      {
+        "goal": "Sleep before midnight",
+        "done": false
+      }
+    ],
+    "happiness_task": {
+      "task": "Call an old friend",
+      "custom_text": "",
+      "image_path": "static/images/2025-07-23_205755.jpg",
+      "reflection": "Testing if this would be synced to JSON"
+    }
+  },
+  "2025-07-24": {
+    "health_goals": [
+      {
+        "goal": "Take a 20-minute nap",
+        "done": true
+      },
+      {
+        "goal": "Drink 5 cups of water",
+        "done": true
+      },
+      {
+        "goal": "Do 30 minutes of cardio",
+        "done": true
+      },
+      {
+        "goal": "Eat at least one fruit",
+        "done": true
+      },
+      {
+        "goal": "Sleep before midnight",
+        "done": false
+      }
+    ],
+    "happiness_task": {
+      "task": "Watch the clouds for 10 minutes",
+      "custom_text": "",
+      "image_path": "static/images/2025-07-24_150812.jpg",
+      "reflection": "I have watched the clouds for 10 minutes and i am having fun!"
+    }
   }
 }

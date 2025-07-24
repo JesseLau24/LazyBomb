@@ -98,7 +98,7 @@
                     <h3>{{ col }}</h3>
                     <ul>
                     {% for task in tasks if task.status|lower == col|lower %}
-                        <li class="status-{{ (task.status or 'to do') | lower | replace(' ', '') }}" 
+                        <li class="status-{{ (task.status or 'to do') | lower | replace(' ', '') | replace("'", '') }}">
                             data-due="{{ task.due_date or '9999-12-31T23:59' }}" 
                             data-priority="{{ task.priority or 'normal' }}">
                             <div class="task-summary">
