@@ -1,10 +1,13 @@
+# task_status_api.py
+
 from flask import Flask, request, jsonify, render_template, make_response, send_file
 from flask_cors import CORS
 from task_storage.task_status_updater import update_task_status
 from task_storage.task_writer import append_tasks  
 from utils.html_generator import generate_task_html_from_json
-from utils.constants import TASKS_JSON_PATH
+from utils.constants import TASKS_JSON_PATH, DAILY_LOG_FILE_TEMPLATE
 from dailylog.health_tracker import get_today_health_goals, update_health_goal_status, update_health_status
+from datetime import datetime
 import json
 import os
 
@@ -52,7 +55,23 @@ def update_status():
         return jsonify({"message": "Status updated"}), 200
     else:
         return jsonify({"error": "Task not found"}), 404
+    
+@app.route("/daily_diary")
+def daily_diary():
+    # 获取当前年份
+    year = datetime.now().year # 这里可能还会报错
+    log_file = DAILY_LOG_FILE_TEMPLATE.format(year=year)
 
+    # 加载日志内容
+    if os.path.exists(log_file):
+        with open(log_file, "r", encoding="utf-8") as f:
+            logs = json.load(f)
+    else:
+        logs = {}
+
+    # 将 logs 传给模板
+    sorted_logs = dict(sorted(logs.items(), key=lambda x: x[0], reverse=True))  # 👈 转换成 dict
+    return render_template("diary.html.j2", logs=sorted_logs)
 
 @app.route('/export_html', methods=['POST'])
 def export_static_html():
@@ -234,7 +253,7 @@ def update_happiness_entry():
 
             # 转换为前端可访问的相对路径（static/images/xxx.jpg）
             rel_path = os.path.relpath(abs_path, start="static").replace("\\", "/")
-            image_path = f"static/{rel_path}"
+            image_path = f"/static/{rel_path}"
 
         # 写入日志
         update_today_happiness_reflection(reflection=reflection, image_path=image_path)

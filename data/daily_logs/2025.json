@@ -1,5 +1,5 @@
 {
-  "2025-07-19": {
+  "2025-07-10": {
     "health_goals": [
       {
         "goal": "Take a 20-minute nap",
@@ -25,15 +25,15 @@
     "happiness_task": {
       "task": "Take a picture of a bird",
       "custom_text": "",
-      "image_path": "static/images/2025-07-19_235743.jpg",
+      "image_path": "/static/images/2025-07-10_235743.jpg",
       "reflection": "I have a wallpaper of a dog"
     }
   },
-  "2025-07-20": {
+  "2025-07-11": {
     "happiness_task": {
       "task": "Call an old friend",
       "custom_text": "",
-      "image_path": "static/images/2025-07-20_000926.png",
+      "image_path": "/static/images/2025-07-11_000926.png",
       "reflection": "I don't have any friends. So I am not going to call anyone.\r\n\r\nBut I do have some awesome wallpapers. Here is one!"
     },
     "health_goals": [
@@ -59,7 +59,7 @@
       }
     ]
   },
-  "2025-07-21": {
+  "2025-07-12": {
     "health_goals": [
       {
         "goal": "Take a 20-minute nap",
@@ -85,11 +85,11 @@
     "happiness_task": {
       "task": "Draw something on paper",
       "custom_text": "",
-      "image_path": "static/images/2025-07-21_145244.jpg",
+      "image_path": "/static/images/2025-07-12_145244.jpg",
       "reflection": "I guess I need to add more happiness task of the day. Here is another wallpaper"
     }
   },
-  "2025-07-22": {
+  "2025-07-13": {
     "health_goals": [
       {
         "goal": "Take a 20-minute nap",
@@ -115,11 +115,11 @@
     "happiness_task": {
       "task": "Take a picture of a bird",
       "custom_text": "",
-      "image_path": "static/images/2025-07-22_150240.jpg",
+      "image_path": "/static/images/2025-07-13_150240.jpg",
       "reflection": "I don't want to... But here is a wall paper"
     }
   },
-  "2025-07-23": {
+  "2025-07-14": {
     "health_goals": [
       {
         "goal": "Take a 20-minute nap",
@@ -145,11 +145,11 @@
     "happiness_task": {
       "task": "Call an old friend",
       "custom_text": "",
-      "image_path": "static/images/2025-07-23_205755.jpg",
+      "image_path": "/static/images/2025-07-14_205755.jpg",
       "reflection": "Testing if this would be synced to JSON"
     }
   },
-  "2025-07-24": {
+  "2025-07-15": {
     "health_goals": [
       {
         "goal": "Take a 20-minute nap",
@@ -175,8 +175,98 @@
     "happiness_task": {
       "task": "Watch the clouds for 10 minutes",
       "custom_text": "",
-      "image_path": "static/images/2025-07-24_150812.jpg",
+      "image_path": "/static/images/2025-07-15_150812.jpg",
       "reflection": "I have watched the clouds for 10 minutes and i am having fun!"
+    }
+  },
+  "2025-07-16": {
+    "happiness_task": {
+      "task": "Call an old friend",
+      "custom_text": "",
+      "image_path": "/static/images/2025-07-16_160810.png",
+      "reflection": "this is just a test"
+    },
+    "health_goals": [
+      {
+        "goal": "Take a 20-minute nap",
+        "done": true
+      },
+      {
+        "goal": "Drink 5 cups of water",
+        "done": true
+      },
+      {
+        "goal": "Do 30 minutes of cardio",
+        "done": true
+      },
+      {
+        "goal": "Eat at least one fruit",
+        "done": true
+      },
+      {
+        "goal": "Sleep before midnight",
+        "done": true
+      }
+    ]
+  },
+  "2025-07-17": {
+    "health_goals": [
+      {
+        "goal": "Take a 20-minute nap",
+        "done": true
+      },
+      {
+        "goal": "Drink 5 cups of water",
+        "done": true
+      },
+      {
+        "goal": "Do 30 minutes of cardio",
+        "done": true
+      },
+      {
+        "goal": "Eat at least one fruit",
+        "done": true
+      },
+      {
+        "goal": "Sleep before midnight",
+        "done": false
+      }
+    ],
+    "happiness_task": {
+      "task": "Call an old friend",
+      "custom_text": "",
+      "image_path": "/static/images/2025-07-25_163122.png",
+      "reflection": "I don't want to call any old friends because they are busy with their lives and I am busy with mine. Besides, what is a friend? Do you have any friends? Nobody has friends. They think they do, but they don't.\r\nYou are a good friend if you are useful. If I cannot use you, then we are not friends. Sure there are some exceptions but we should not treat them as normal.\r\nI don't have any true friends and I don't want to call anybody. So here is a picture of my new Seiko Mod with a really good dial. Time is my friend."
+    }
+  },
+  "2025-07-25": {
+    "health_goals": [
+      {
+        "goal": "Take a 20-minute nap",
+        "done": true
+      },
+      {
+        "goal": "Drink 5 cups of water",
+        "done": true
+      },
+      {
+        "goal": "Do 30 minutes of cardio",
+        "done": true
+      },
+      {
+        "goal": "Eat at least one fruit",
+        "done": true
+      },
+      {
+        "goal": "Sleep before midnight",
+        "done": false
+      }
+    ],
+    "happiness_task": {
+      "task": "Write a thank-you message",
+      "custom_text": "",
+      "image_path": "/static/images/2025-07-25_171428.png",
+      "reflection": "Thank you very much!"
     }
   }
 }

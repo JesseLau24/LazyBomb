@@ -1,48 +1,72 @@
 [
   {
     "task": "Come up with a theme for the new RL YouTube idea discussed",
-    "due_date": "2025-07-24T19:00",
+    "due_date": "2025-07-26T19:00",
     "priority": "high",
     "assigner": "Jesse Huang",
     "comments": "This task involves brainstorming and deciding on a theme based on recent discussions about the new RL YouTube project.",
-    "status": "deleted",
-    "deadline": "2025-07-24T19:00",
+    "status": "I'm on it",
+    "deadline": "2025-07-26T19:00",
     "email_content": "Dear Alex\r\n\r\nI hope this email finds you well\r\n\r\nPlease take a look at the new RL youtube idea that we just talked about and\r\ncome up with a theme.\r\nDeadline is 24 July 2025 19:00\r\n\r\nBest regards\r\nJesse Huang\r\n",
     "id": "ad7b6460-d6f5-4fed-8961-c676c9c1db60",
     "source": "manual"
   },
   {
     "task": "Generate 2 ideas for the new RL channel",
-    "due_date": "2025-07-24T20:00",
+    "due_date": "2025-07-29T20:00",
     "priority": "",
     "assigner": "Jesse Huang",
     "comments": "The task is to come up with two innovative ideas specifically for the new RL (Reinforcement Learning) channel by the given deadline.",
-    "status": "I'm on it",
-    "deadline": "2025-07-24T20:00",
+    "status": "to do",
+    "deadline": "2025-07-29T20:00",
     "email_content": "Dear Alex\r\n\r\nI hope this email finds you well\r\n\r\nPlease generate 2 ideas for the new RL channel by 19:00 July 24th 2025\r\n\r\nBest Regards\r\nJesse Huang\r\n",
     "id": "0da43f6d-0c3f-4ee5-941f-6637595ed493",
     "source": "manual"
   },
   {
     "task": "Test if the static HTML Snapshot is good enough!",
-    "due_date": "2025-07-24T15:45",
+    "due_date": "2025-07-30T15:45",
     "priority": "high",
     "assigner": "Jesse",
     "comments": "This is just a test",
     "status": "to do",
     "source": "manual",
-    "deadline": "2025-07-24T15:45",
+    "deadline": "2025-07-30T15:45",
     "id": "cd6a6753-1437-4448-bcd4-ea99fa064de7"
   },
   {
     "task": "Debug the new module on Ollama Aget",
-    "due_date": "2025-07-24T07:23",
+    "due_date": "2025-07-27T07:23",
     "priority": "high",
     "assigner": "Jesse",
     "comments": "This is not the case",
-    "status": "finished",
+    "status": "to do",
     "source": "manual",
-    "deadline": "2025-07-24T07:23",
+    "deadline": "2025-07-27T07:23",
     "id": "d0f6bd81-0a99-4e93-873b-b18910746be6"
+  },
+  {
+    "task": "Finish the video",
+    "due_date": "2025-07-28T22:00",
+    "priority": "",
+    "assigner": "Jesse",
+    "comments": "The task is to complete a video project.",
+    "status": "to do",
+    "deadline": "2025-07-28T22:00",
+    "email_content": "Dear Alex\r\n\r\nI hope this email finds you well\r\n\r\nFinish the video by 10:00 PM July 25 2025\r\n\r\nBest Regards\r\nJesse\r\n",
+    "id": "9ee11074-79fe-4fbd-865f-d07273b6d0c7",
+    "source": "manual"
+  },
+  {
+    "task": "Fix the issue with the daily tasks and daily happiness goal updating JSON file due to bad formatting.",
+    "due_date": "2025-07-28T19:00",
+    "priority": "high",
+    "assigner": "Jesse Huang",
+    "comments": "The issue was identified by Jesse Huang and needs resolution before the specified deadline.",
+    "status": "to do",
+    "deadline": "2025-07-28T19:00",
+    "email_content": "Dear Alex\r\n\r\nI hope this email finds you well\r\n\r\nI recently noticed that there seems to be an issue with the daily tasks and\r\ndaily happiness goal updating json file issue with bad formatting.\r\n\r\nSolve this issue. Deadline is 28th July 2025 19:00\r\n\r\nBest regards\r\nJesse Huang\r\n",
+    "id": "ad35a897-9c59-447a-80dc-eb77b0fc1c99",
+    "source": "manual"
   }
 ]

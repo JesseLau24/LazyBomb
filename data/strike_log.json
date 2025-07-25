@@ -64,5 +64,11 @@
     "deadline": "2025-07-23T00:40",
     "status": "to do",
     "strike_time": "2025-07-23T14:52:55.589310"
+  },
+  {
+    "task": "Test if the static HTML Snapshot is good enough!",
+    "deadline": "2025-07-24T15:45",
+    "status": "to do",
+    "strike_time": "2025-07-24T16:16:41.019124"
   }
 ]
