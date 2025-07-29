@@ -87,3 +87,51 @@ def update_today_happiness_reflection(reflection: str = "", image_path: str = ""
 
     write_json(filepath, logs)
 
+def update_today_happiness_task_content(new_task_text: str):
+    """更新今天的快乐任务的自定义内容，而不是覆盖系统默认任务"""
+    from datetime import date
+    from utils.file_utils import read_json, write_json  # 确保你导入了正确的工具
+    from utils.constants import DAILY_LOG_FILE_TEMPLATE  # 确保路径常量也正确导入
+
+    today_str = date.today().isoformat()
+    year = str(date.today().year)
+    filepath = DAILY_LOG_FILE_TEMPLATE.format(year=year)
+
+    logs = read_json(filepath)
+
+    # 初始化今日日志
+    logs.setdefault(today_str, {})
+
+    # 初始化快乐任务结构
+    happiness = logs[today_str].setdefault("happiness_task", {})
+    happiness.setdefault("task", "")
+    happiness.setdefault("custom_text", "")
+    happiness.setdefault("image_path", "")
+    happiness.setdefault("reflection", "")
+
+    # ✅ 更新 custom_text 字段（不动 task 字段）
+    happiness["custom_text"] = new_task_text
+
+    write_json(filepath, logs)
+
+
+def reroll_today_happiness_task() -> str:
+    """重新随机今天的快乐任务，并清空用户记录"""
+    today_str = date.today().isoformat()
+    year = str(date.today().year)
+    filepath = DAILY_LOG_FILE_TEMPLATE.format(year=year)
+
+    logs = read_json(filepath)
+    logs.setdefault(today_str, {})
+
+    new_task = random.choice(happiness_activities)
+
+    logs[today_str]["happiness_task"] = {
+        "task": new_task,
+        "custom_text": "",
+        "image_path": "",
+        "reflection": ""
+    }
+
+    write_json(filepath, logs)
+    return new_task

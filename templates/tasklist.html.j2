@@ -80,7 +80,7 @@
             <h2>🎲 Happiness Task of the Day 
                 <button onclick="refreshHappinessTask()" style="margin-left: 10px;">🎲</button>
             </h2>
-            <div id="happiness-task-text">Loading...</div>
+            <input type="text" id="happiness-task-input" style="width: 100%;" />
             <textarea id="happiness-reflection" rows="4" placeholder="Write your reflection here..." style="width: 100%; margin-top: 10px;"></textarea>
             <div style="margin-top: 10px;">
                 <label for="happiness-photo">📷 Upload a photo:</label>
@@ -327,27 +327,39 @@
 
         // ✅ 加载快乐任务
         function loadHappinessTask() {
-        fetch('/get_happiness_today')
-            .then(r => r.json())
-            .then(data => {
-            document.getElementById('happiness-task-text').innerText = data.task || 'No task today';
-            document.getElementById('happiness-reflection').value = data.reflection || '';
-            });
+            fetch('/get_happiness_today')
+                .then(r => r.json())
+                .then(data => {
+                    const input = document.getElementById('happiness-task-input');
+                    input.value = data.custom_text || data.task || '';
+                    document.getElementById('happiness-reflection').value = data.reflection || '';
+                });
         }
+
         loadHappinessTask();
 
-        // ✅ 重新随机一个快乐任务
         function refreshHappinessTask() {
-        fetch('/get_happiness_today?refresh=true')
-            .then(r => r.json())
+            fetch('/reroll_happiness_task', {
+                method: 'POST'
+            }).then(() => {
+                // 接下来重新获取任务（最新内容），再刷新 UI
+                return fetch('/get_happiness_today');
+            }).then(res => res.json())
             .then(data => {
-            document.getElementById('happiness-task-text').innerText = data.task || 'No task today';
-            document.getElementById('happiness-reflection').value = '';
+                const taskField = document.getElementById('happiness-task-input');
+                const customText = data.custom_text || "";
+                const systemTask = data.task || "No task today";
+                taskField.value = customText || systemTask;
+                document.getElementById('happiness-reflection').value = '';  // 清空感想
+            }).catch(err => {
+                console.error("🎲 Failed to reroll happiness task:", err);
+                alert("🚨 Failed to reroll happiness task.");
             });
         }
 
         // ✅ 提交快乐任务记录
         function submitHappinessEntry() {
+            const task = document.getElementById('happiness-task-input').value.trim();
             const reflection = document.getElementById('happiness-reflection').value.trim();
             const photoInput = document.getElementById('happiness-photo');
             const photoFile = photoInput.files[0];
@@ -358,6 +370,7 @@
             }
 
             const formData = new FormData();
+            formData.append('task', task);
             formData.append('reflection', reflection);
             if (photoFile) formData.append('photo', photoFile);
 
@@ -453,8 +466,6 @@
             }
         }
 
-
-
         async function submitNewTask() {
             const newTask = {
                 task: document.getElementById('new-task-name').value,
@@ -475,6 +486,21 @@
 
             location.reload();
         }
+
+        document.getElementById('happiness-task-input').addEventListener('change', function () {
+            const editedText = this.value.trim();
+            fetch('/edit_happiness_task', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ task: editedText })  // ✅ 这行必须是 task
+            }).then(res => {
+                if (!res.ok) {
+                    console.error('❌ Failed to update custom task.');
+                }
+            }).catch(err => {
+                console.error('🚨 Error updating custom task:', err);
+            });
+        });
 
 
     </script>

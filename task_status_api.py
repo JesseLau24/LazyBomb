@@ -265,6 +265,31 @@ def update_happiness_entry():
         traceback.print_exc()
         return jsonify({"status": "error", "message": str(e)}), 500
 
+@app.route("/edit_happiness_task", methods=["POST"])
+def edit_happiness_task():
+    try:
+        from dailylog.happiness_engine import update_today_happiness_task_content
+        content = request.get_json()
+        new_text = content.get("task", "").strip()
+
+        if not new_text:
+            return jsonify({"error": "Missing task text"}), 400
+
+        update_today_happiness_task_content(new_text)
+        return jsonify({"status": "updated"}), 200
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+@app.route("/reroll_happiness_task", methods=["POST"])
+def reroll_happiness_task():
+    try:
+        from dailylog.happiness_engine import reroll_today_happiness_task
+        task = reroll_today_happiness_task()
+        return jsonify(task), 200
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+
 
 if __name__ == '__main__':
     app.run(port=5000)

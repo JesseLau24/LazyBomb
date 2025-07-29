@@ -268,5 +268,35 @@
       "image_path": "/static/images/2025-07-25_171428.png",
       "reflection": "Thank you very much!"
     }
+  },
+  "2025-07-29": {
+    "health_goals": [
+      {
+        "goal": "Take a 20-minute nap",
+        "done": true
+      },
+      {
+        "goal": "Drink 5 cups of water",
+        "done": true
+      },
+      {
+        "goal": "Do 30 minutes of cardio",
+        "done": true
+      },
+      {
+        "goal": "Eat at least one fruit",
+        "done": true
+      },
+      {
+        "goal": "Sleep before midnight",
+        "done": true
+      }
+    ],
+    "happiness_task": {
+      "task": "Write a thank-you message",
+      "custom_text": "This is a customized task: testing if it is good",
+      "image_path": "/static/images/2025-07-29_212204.jpg",
+      "reflection": "Testing if customized task is allowed"
+    }
   }
 }
