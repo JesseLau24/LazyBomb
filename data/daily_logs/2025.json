@@ -328,5 +328,35 @@
       "image_path": "/static/images/2025-07-30_091254.png",
       "reflection": "I have enriched the daily happiness task pool to 50 so that each random draw would be meaningful instead of just a pool of 5. And later I am thinking about adding another function that can add customized daily happiness task to the pool, or at least give the users the option to modify the json file to add something interesting."
     }
+  },
+  "2025-08-01": {
+    "health_goals": [
+      {
+        "goal": "Take a 20-minute nap",
+        "done": false
+      },
+      {
+        "goal": "Drink 5 cups of water",
+        "done": false
+      },
+      {
+        "goal": "Do 30 minutes of cardio",
+        "done": false
+      },
+      {
+        "goal": "Eat at least one fruit",
+        "done": false
+      },
+      {
+        "goal": "Sleep before midnight",
+        "done": false
+      }
+    ],
+    "happiness_task": {
+      "task": "Give yourself a mini foot massage",
+      "custom_text": "",
+      "image_path": "",
+      "reflection": ""
+    }
   }
 }

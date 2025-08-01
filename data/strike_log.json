@@ -76,5 +76,11 @@
     "deadline": "2025-07-29T20:00",
     "status": "to do",
     "strike_time": "2025-07-30T09:20:59.102004"
+  },
+  {
+    "task": "Generate 2 ideas for the new RL channel",
+    "deadline": "2025-07-30T09:45",
+    "status": "to do",
+    "strike_time": "2025-08-01T12:03:29.485244"
   }
 ]

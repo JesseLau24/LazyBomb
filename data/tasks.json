@@ -13,12 +13,12 @@
   },
   {
     "task": "Generate 2 ideas for the new RL channel",
-    "due_date": "2025-07-30T09:45",
+    "due_date": "2025-08-06T09:45",
     "priority": "high",
     "assigner": "Jesse Huang",
     "comments": "The task is to come up with two innovative ideas specifically for the new RL (Reinforcement Learning) channel by the given deadline.",
-    "status": "to do",
-    "deadline": "2025-07-30T09:45",
+    "status": "finished",
+    "deadline": "2025-08-06T09:45",
     "email_content": "Dear Alex\r\n\r\nI hope this email finds you well\r\n\r\nPlease generate 2 ideas for the new RL channel by 19:00 July 24th 2025\r\n\r\nBest Regards\r\nJesse Huang\r\n",
     "id": "0da43f6d-0c3f-4ee5-941f-6637595ed493",
     "source": "manual"
@@ -91,5 +91,29 @@
     "source": "manual",
     "deadline": "2025-08-02T17:40",
     "id": "a27d5d09-a54e-46b9-9071-4b87ed79faee"
+  },
+  {
+    "task": "Modify the daily happiness tasks system to allow adding multiple tasks to JSON, each with a unique ID.",
+    "due_date": "2025-08-01T19:00",
+    "priority": null,
+    "assigner": "Jesse Huang",
+    "comments": "This modification involves updating the backend or data structure to support multiple entries in a single JSON file, ensuring each has a distinct identifier.",
+    "status": "to do",
+    "deadline": "2025-08-01T19:00",
+    "email_content": "Dear Alex\r\n\r\nPlease do the following modifications to daily happiness tasks:\r\n\r\n1) capable of adding multiple daily happiness tasks to JSON, each with a\r\nunique ID\r\n2) add \"Edit\", \"Delete\", button to Daily Diary page and the Flask API\r\n\r\nThe deadline is by 19:00 August 1st 2025\r\n\r\nBest regards\r\nJesse Huang\r\n",
+    "id": "5426c234-947e-494e-ab81-97bb24db22d5",
+    "source": "manual"
+  },
+  {
+    "task": "Add 'Edit' and 'Delete' buttons to the Daily Diary page and the Flask API.",
+    "due_date": "2025-08-01T19:00",
+    "priority": null,
+    "assigner": "Jesse Huang",
+    "comments": "This task involves frontend changes on the Daily Diary page as well as backend adjustments in the Flask API to handle edit and delete operations for tasks.",
+    "status": "to do",
+    "deadline": "2025-08-01T19:00",
+    "email_content": "Dear Alex\r\n\r\nPlease do the following modifications to daily happiness tasks:\r\n\r\n1) capable of adding multiple daily happiness tasks to JSON, each with a\r\nunique ID\r\n2) add \"Edit\", \"Delete\", button to Daily Diary page and the Flask API\r\n\r\nThe deadline is by 19:00 August 1st 2025\r\n\r\nBest regards\r\nJesse Huang\r\n",
+    "id": "7f509297-bd04-40ed-92f0-8902a755a04f",
+    "source": "manual"
   }
 ]
