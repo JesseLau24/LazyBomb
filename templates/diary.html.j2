@@ -79,7 +79,7 @@
                 <!-- Happiness Task -->
                 <div class="happiness-box">
                     <h3>📸 Happiness Task</h3>
-                    <p><strong>Task:</strong> {{ ht.task or 'No task' }}</p>
+                    <p><strong>Task:</strong> {{ ht.custom_text or ht.task or 'No task' }}</p>
                     {% if ht.image_path %}
                         <img src="{{ url_for('static', filename=ht.image_path.split('static/')[-1]) }}" alt="Uploaded image">
                     {% endif %}
