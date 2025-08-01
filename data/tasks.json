@@ -94,26 +94,38 @@
   },
   {
     "task": "Modify the daily happiness tasks system to allow adding multiple tasks to JSON, each with a unique ID.",
-    "due_date": "2025-08-01T19:00",
-    "priority": null,
+    "due_date": "2025-08-01T07:00",
+    "priority": "",
     "assigner": "Jesse Huang",
     "comments": "This modification involves updating the backend or data structure to support multiple entries in a single JSON file, ensuring each has a distinct identifier.",
     "status": "to do",
-    "deadline": "2025-08-01T19:00",
+    "deadline": "2025-08-01T07:00",
     "email_content": "Dear Alex\r\n\r\nPlease do the following modifications to daily happiness tasks:\r\n\r\n1) capable of adding multiple daily happiness tasks to JSON, each with a\r\nunique ID\r\n2) add \"Edit\", \"Delete\", button to Daily Diary page and the Flask API\r\n\r\nThe deadline is by 19:00 August 1st 2025\r\n\r\nBest regards\r\nJesse Huang\r\n",
     "id": "5426c234-947e-494e-ab81-97bb24db22d5",
     "source": "manual"
   },
   {
     "task": "Add 'Edit' and 'Delete' buttons to the Daily Diary page and the Flask API.",
-    "due_date": "2025-08-01T19:00",
-    "priority": null,
+    "due_date": "2025-08-01T12:45",
+    "priority": "high",
     "assigner": "Jesse Huang",
     "comments": "This task involves frontend changes on the Daily Diary page as well as backend adjustments in the Flask API to handle edit and delete operations for tasks.",
     "status": "to do",
-    "deadline": "2025-08-01T19:00",
+    "deadline": "2025-08-01T12:45",
     "email_content": "Dear Alex\r\n\r\nPlease do the following modifications to daily happiness tasks:\r\n\r\n1) capable of adding multiple daily happiness tasks to JSON, each with a\r\nunique ID\r\n2) add \"Edit\", \"Delete\", button to Daily Diary page and the Flask API\r\n\r\nThe deadline is by 19:00 August 1st 2025\r\n\r\nBest regards\r\nJesse Huang\r\n",
     "id": "7f509297-bd04-40ed-92f0-8902a755a04f",
+    "source": "manual"
+  },
+  {
+    "task": "Order more Logitech K120 keyboards, aiming for a price lower than $17.00 each",
+    "due_date": "2025-08-16T19:00",
+    "priority": null,
+    "assigner": "Jesse Huang",
+    "comments": "The current inventory has only 1 keyboard left, and they are broken.",
+    "status": "to do",
+    "deadline": "2025-08-16T19:00",
+    "email_content": "Dear Alex\r\n\r\nI hope this email finds you well.\r\n\r\nThe keyboards are broken and there is only 1 left in our inventory. Please\r\norder more. The model is Logitech K120 and the budget is $17.00. Anything\r\nlower would be nice.\r\n\r\nThe deadline is August 16th 2025 19:00\r\n\r\nBest regards\r\nJesse Huang\r\n",
+    "id": "f5e5fa13-0b77-4e2a-b590-0e807abc8760",
     "source": "manual"
   }
 ]

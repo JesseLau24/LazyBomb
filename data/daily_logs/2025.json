@@ -333,30 +333,30 @@
     "health_goals": [
       {
         "goal": "Take a 20-minute nap",
-        "done": false
+        "done": true
       },
       {
         "goal": "Drink 5 cups of water",
-        "done": false
+        "done": true
       },
       {
         "goal": "Do 30 minutes of cardio",
-        "done": false
+        "done": true
       },
       {
         "goal": "Eat at least one fruit",
-        "done": false
+        "done": true
       },
       {
         "goal": "Sleep before midnight",
-        "done": false
+        "done": true
       }
     ],
     "happiness_task": {
-      "task": "Give yourself a mini foot massage",
-      "custom_text": "",
-      "image_path": "",
-      "reflection": ""
+      "task": "Write down 3 things you're grateful for",
+      "custom_text": "Write down your weekly plan",
+      "image_path": "/static/images/2025-08-01_122823.jpg",
+      "reflection": "1. Add delete and edit to daily diary page\r\n2. Make storing multiple daily task possible\r\n3. Find out and fix the json writing error occasionally happens"
     }
   }
 }
