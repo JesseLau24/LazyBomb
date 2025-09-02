@@ -10,5 +10,89 @@
     "email_content": "Dear Alex\r\n\r\nI hope this email finds you well.\r\n\r\nPlease refine and update the ReadMe.md for our spaCy pipeline.\r\n\r\nDeadline is Sept 16th 2025 19:00\r\n\r\nBest Regards\r\nJesse Huang\r\n",
     "id": "5fd43fb3-cb92-4dfe-bc85-dd67e95e50c4",
     "source": "manual"
+  },
+  {
+    "task": "Refine the new spaCy Pipeline for Latvian, especially the ReadMe.md files. Make it clear how to install the model so that all users would be happy.",
+    "due_date": "2025-09-17T19:00",
+    "priority": null,
+    "assigner": "Jesse Huang",
+    "comments": "The task involves improving documentation and installation instructions for a spaCy Pipeline specifically tailored for Latvian language processing.",
+    "status": "to do",
+    "deadline": "2025-09-17T19:00",
+    "email_content": "Dear Alex\r\n\r\nI hope this email finds you well.\r\n\r\nPlease refine the new spaCy Pipeline for Latvian, especially the ReadMe.md\r\nfiles. Please make it clear how to install the model so that all users\r\nwould be happy\r\n\r\nDeadline is Sept 17th 2025 19:00\r\n\r\nBest regards\r\nJesse Huang\r\n",
+    "id": "85a4f6e5-ba51-4de7-909a-6710df915cd9",
+    "source": "manual"
+  },
+  {
+    "task": "Refine and update the ReadMe.md for our spaCy pipeline.",
+    "due_date": "2025-09-16T19:00",
+    "priority": null,
+    "assigner": "Jesse Huang",
+    "comments": "Ensure all sections are up-to-date with the latest changes in the pipeline.",
+    "status": "to do",
+    "deadline": "2025-09-16T19:00",
+    "email_content": "Dear Alex\r\n\r\nI hope this email finds you well.\r\n\r\nPlease refine and update the ReadMe.md for our spaCy pipeline.\r\n\r\nDeadline is Sept 16th 2025 19:00\r\n\r\nBest Regards\r\nJesse Huang\r\n",
+    "id": "aa87973a-2e6d-4d97-accc-8f598dac17b0",
+    "source": "manual"
+  },
+  {
+    "task": "Finish updating the new model for lazybomb",
+    "due_date": "2025-09-16T19:00",
+    "priority": null,
+    "assigner": "Jesse Huang",
+    "comments": "Ensure all components of the model are updated as per the latest requirements.",
+    "status": "to do",
+    "deadline": "2025-09-16T19:00",
+    "email_content": "Dear Alex\r\n\r\nPlease finish updating the new modele for lazybomb.\r\n\r\nDeadline is September 16th 2025 19:00\r\n\r\nBest regards\r\nJesse Huang\r\n",
+    "id": "b60a5bd3-9825-4819-babb-409e2e3ab360",
+    "source": "manual"
+  },
+  {
+    "task": "Translate client emails from Japanese using local ollama agents.",
+    "due_date": "2025-09-02T15:30",
+    "priority": null,
+    "assigner": "Jesse Huang",
+    "comments": "These are client emails sent by Jerry. Ensure translation quality and modify when possible.",
+    "status": "to do",
+    "deadline": "2025-09-02T15:30",
+    "email_content": "Dear Alex\r\n\r\nI hope this email finds you well.\r\n\r\nJerry is going to send you some client emails in Japanese and you need to\r\nuse local ollama agents to translate them and check the quality, modify\r\nthem whenever you can.\r\n\r\nDeadline is Sept 2 2025 15:30\r\n\r\nBest regards\r\nJesse Huang\r\n",
+    "id": "c1bd715a-f56e-4259-8154-97d41517a394",
+    "source": "manual"
+  },
+  {
+    "task": "Check the quality of translated emails and make modifications as needed.",
+    "due_date": "2025-09-02T15:30",
+    "priority": null,
+    "assigner": "Jesse Huang",
+    "comments": "This task is part of translating client emails from Japanese. Ensure high-quality translations.",
+    "status": "to do",
+    "deadline": "2025-09-02T15:30",
+    "email_content": "Dear Alex\r\n\r\nI hope this email finds you well.\r\n\r\nJerry is going to send you some client emails in Japanese and you need to\r\nuse local ollama agents to translate them and check the quality, modify\r\nthem whenever you can.\r\n\r\nDeadline is Sept 2 2025 15:30\r\n\r\nBest regards\r\nJesse Huang\r\n",
+    "id": "4fa51bc3-05e7-41c1-a069-2edde92b27db",
+    "source": "manual"
+  },
+  {
+    "task": "Finish the weekly report for last week",
+    "due_date": "2025-09-03T19:00",
+    "priority": null,
+    "assigner": "Jesse Huang",
+    "comments": "The task involves completing a weekly report for the previous week.",
+    "status": "to do",
+    "deadline": "2025-09-03T19:00",
+    "email_content": "Dear Alex:\r\n\r\nI hope this email finds you well.\r\n\r\nPlease finish the weekly report for last week and send it to Jane.\r\n\r\nDeadline is 19:00 Sept 03 2025\r\n\r\nBest regards!\r\nJesse huang\r\n",
+    "id": "19d998fa-fb15-4512-845e-ed0a4c3aae07",
+    "source": "manual"
+  },
+  {
+    "task": "Send the finished weekly report to Jane",
+    "due_date": "2025-09-03T19:00",
+    "priority": null,
+    "assigner": "Jesse Huang",
+    "comments": "This task is dependent on completing the first task, as it requires sending the report after its completion.",
+    "status": "to do",
+    "deadline": "2025-09-03T19:00",
+    "email_content": "Dear Alex:\r\n\r\nI hope this email finds you well.\r\n\r\nPlease finish the weekly report for last week and send it to Jane.\r\n\r\nDeadline is 19:00 Sept 03 2025\r\n\r\nBest regards!\r\nJesse huang\r\n",
+    "id": "442180d3-0b5e-4e85-b5bc-5ca56b00bce8",
+    "source": "manual"
   }
 ]

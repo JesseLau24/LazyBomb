@@ -166,5 +166,11 @@
     "deadline": "2025-08-27T19:00",
     "status": "to do",
     "strike_time": "2025-09-02T14:49:40.318123"
+  },
+  {
+    "task": "Translate client emails received from Jerry.",
+    "deadline": "2023-09-02T15:15",
+    "status": "to do",
+    "strike_time": "2025-09-02T15:13:28.727533"
   }
 ]
