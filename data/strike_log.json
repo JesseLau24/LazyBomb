@@ -82,5 +82,89 @@
     "deadline": "2025-07-30T09:45",
     "status": "to do",
     "strike_time": "2025-08-01T12:03:29.485244"
+  },
+  {
+    "task": "Add animation to the process of randomly drawing daily happiness tasks from the JSON pool.",
+    "deadline": "2025-08-02T19:00",
+    "status": "to do",
+    "strike_time": "2025-08-13T13:02:50.710672"
+  },
+  {
+    "task": "Finish packing the whole project into exe files",
+    "deadline": "2025-08-02T17:40",
+    "status": "to do",
+    "strike_time": "2025-08-13T13:02:50.727399"
+  },
+  {
+    "task": "Add 'Edit' and 'Delete' buttons to the Daily Diary page and the Flask API.",
+    "deadline": "2025-08-01T19:00",
+    "status": "to do",
+    "strike_time": "2025-08-13T13:02:50.740492"
+  },
+  {
+    "task": "Wash the car",
+    "deadline": "2025-08-01T23:00",
+    "status": "to do",
+    "strike_time": "2025-08-13T13:02:50.750004"
+  },
+  {
+    "task": "Update the new module of Gmail, test it, and send the code to the assigner.",
+    "deadline": "2025-08-01T22:40",
+    "status": "to do",
+    "strike_time": "2025-08-13T13:02:50.762317"
+  },
+  {
+    "task": "Clean the yard",
+    "deadline": "2025-08-02T10:00",
+    "status": "to do",
+    "strike_time": "2025-08-13T13:02:50.773862"
+  },
+  {
+    "task": "Add animation to the process of randomly drawing daily happiness tasks from the JSON pool.",
+    "deadline": "2025-08-02T19:00",
+    "status": "to do",
+    "strike_time": "2025-09-02T14:49:40.253367"
+  },
+  {
+    "task": "Finish packing the whole project into exe files",
+    "deadline": "2025-08-02T17:40",
+    "status": "to do",
+    "strike_time": "2025-09-02T14:49:40.267460"
+  },
+  {
+    "task": "Modify the daily happiness tasks system to allow adding multiple tasks to JSON, each with a unique ID.",
+    "deadline": "2025-08-19T19:00",
+    "status": "to do",
+    "strike_time": "2025-09-02T14:49:40.277349"
+  },
+  {
+    "task": "Order more keyboards, model Logitech K120.",
+    "deadline": "2025-08-16T19:00",
+    "status": "to do",
+    "strike_time": "2025-09-02T14:49:40.285598"
+  },
+  {
+    "task": "Update the new module of Gmail, test it, and send the code to the assigner.",
+    "deadline": "2025-08-01T22:40",
+    "status": "I'm on it",
+    "strike_time": "2025-09-02T14:49:40.293238"
+  },
+  {
+    "task": "Clean the yard",
+    "deadline": "2025-08-02T10:00",
+    "status": "to do",
+    "strike_time": "2025-09-02T14:49:40.301780"
+  },
+  {
+    "task": "Take out the trash",
+    "deadline": "2025-08-27T19:00",
+    "status": "to do",
+    "strike_time": "2025-09-02T14:49:40.309438"
+  },
+  {
+    "task": "Update the new ollama module for new agents on Phi 14b",
+    "deadline": "2025-08-27T19:00",
+    "status": "to do",
+    "strike_time": "2025-09-02T14:49:40.318123"
   }
 ]

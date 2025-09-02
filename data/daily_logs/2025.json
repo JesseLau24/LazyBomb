@@ -358,5 +358,35 @@
       "image_path": "",
       "reflection": ""
     }
+  },
+  "2025-08-13": {
+    "health_goals": [
+      {
+        "goal": "Take a 20-minute nap",
+        "done": true
+      },
+      {
+        "goal": "Drink 5 cups of water",
+        "done": true
+      },
+      {
+        "goal": "Do 30 minutes of cardio",
+        "done": true
+      },
+      {
+        "goal": "Eat at least one fruit",
+        "done": true
+      },
+      {
+        "goal": "Sleep before midnight",
+        "done": false
+      }
+    ],
+    "happiness_task": {
+      "task": "Sit silently and notice 5 different sounds",
+      "custom_text": "",
+      "image_path": "",
+      "reflection": ""
+    }
   }
 }
