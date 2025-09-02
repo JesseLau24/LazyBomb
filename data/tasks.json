@@ -211,5 +211,17 @@
     "email_content": "Dear Alex\r\n\r\nPlease finish updating the new modele for lazybomb.\r\n\r\nDeadline is September 16th 2025 19:00\r\n\r\nBest regards\r\nJesse Huang\r\n",
     "id": "f51bb4fd-387f-413f-9602-fb43a899bfe4",
     "source": "manual"
+  },
+  {
+    "task": "Order more Logitech K120 keyboards, aiming for a price lower than $17.00 each",
+    "due_date": "2025-08-16T19:00",
+    "priority": null,
+    "assigner": "Jesse Huang",
+    "comments": "The current inventory has only 1 keyboard left, and they are broken.",
+    "status": "to do",
+    "deadline": "2025-08-16T19:00",
+    "email_content": "Dear Alex\r\n\r\nI hope this email finds you well.\r\n\r\nThe keyboards are broken and there is only 1 left in our inventory. Please\r\norder more. The model is Logitech K120 and the budget is $17.00. Anything\r\nlower would be nice.\r\n\r\nThe deadline is August 16th 2025 19:00\r\n\r\nBest regards\r\nJesse Huang\r\n",
+    "id": "f5e5fa13-0b77-4e2a-b590-0e807abc8760",
+    "source": "manual"
   }
 ]
