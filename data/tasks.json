@@ -48,51 +48,26 @@
     "source": "manual"
   },
   {
-    "task": "Translate client emails from Japanese using local ollama agents.",
-    "due_date": "2025-09-02T15:30",
-    "priority": null,
+    "task": "Take out the trash",
+    "due_date": "2025-09-04T15:00",
+    "priority": "high",
     "assigner": "Jesse Huang",
-    "comments": "These are client emails sent by Jerry. Ensure translation quality and modify when possible.",
+    "comments": "Please take out the trash by tomorrow. The whole house stinks",
     "status": "to do",
-    "deadline": "2025-09-02T15:30",
-    "email_content": "Dear Alex\r\n\r\nI hope this email finds you well.\r\n\r\nJerry is going to send you some client emails in Japanese and you need to\r\nuse local ollama agents to translate them and check the quality, modify\r\nthem whenever you can.\r\n\r\nDeadline is Sept 2 2025 15:30\r\n\r\nBest regards\r\nJesse Huang\r\n",
-    "id": "c1bd715a-f56e-4259-8154-97d41517a394",
-    "source": "manual"
+    "source": "manual",
+    "deadline": "2025-09-04T15:00",
+    "id": "2210e3f1-6445-4448-937d-f1925c25a7ac"
   },
   {
-    "task": "Check the quality of translated emails and make modifications as needed.",
-    "due_date": "2025-09-02T15:30",
-    "priority": null,
+    "task": "Check and resolve issues with the customer review page, specifically ensuring that new updates are displayed and sorting options (by date or like) are functional.",
+    "due_date": "2025-09-04T19:00",
+    "priority": "high",
     "assigner": "Jesse Huang",
-    "comments": "This task is part of translating client emails from Japanese. Ensure high-quality translations.",
+    "comments": "The issue affects the functionality of displaying and sorting customer reviews on the page.",
     "status": "to do",
-    "deadline": "2025-09-02T15:30",
-    "email_content": "Dear Alex\r\n\r\nI hope this email finds you well.\r\n\r\nJerry is going to send you some client emails in Japanese and you need to\r\nuse local ollama agents to translate them and check the quality, modify\r\nthem whenever you can.\r\n\r\nDeadline is Sept 2 2025 15:30\r\n\r\nBest regards\r\nJesse Huang\r\n",
-    "id": "4fa51bc3-05e7-41c1-a069-2edde92b27db",
-    "source": "manual"
-  },
-  {
-    "task": "Finish the weekly report for last week",
-    "due_date": "2025-09-03T19:00",
-    "priority": null,
-    "assigner": "Jesse Huang",
-    "comments": "The task involves completing a weekly report for the previous week.",
-    "status": "to do",
-    "deadline": "2025-09-03T19:00",
-    "email_content": "Dear Alex:\r\n\r\nI hope this email finds you well.\r\n\r\nPlease finish the weekly report for last week and send it to Jane.\r\n\r\nDeadline is 19:00 Sept 03 2025\r\n\r\nBest regards!\r\nJesse huang\r\n",
-    "id": "19d998fa-fb15-4512-845e-ed0a4c3aae07",
-    "source": "manual"
-  },
-  {
-    "task": "Send the finished weekly report to Jane",
-    "due_date": "2025-09-03T19:00",
-    "priority": null,
-    "assigner": "Jesse Huang",
-    "comments": "This task is dependent on completing the first task, as it requires sending the report after its completion.",
-    "status": "to do",
-    "deadline": "2025-09-03T19:00",
-    "email_content": "Dear Alex:\r\n\r\nI hope this email finds you well.\r\n\r\nPlease finish the weekly report for last week and send it to Jane.\r\n\r\nDeadline is 19:00 Sept 03 2025\r\n\r\nBest regards!\r\nJesse huang\r\n",
-    "id": "442180d3-0b5e-4e85-b5bc-5ca56b00bce8",
+    "deadline": "2025-09-04T19:00",
+    "email_content": "Dear Alex\r\n\r\nI hope this email finds you well.\r\n\r\nWe are experiencing some issues with the customer review page. It is not\r\nshowing any new updates and cannot sort by date or like. Please check what\r\nis the issue and fix it by sept 4th 2025 19:00.\r\n\r\nBest regards\r\nJesse Huang\r\n",
+    "id": "369d4cbd-91c5-4697-900e-a2dd531d0085",
     "source": "manual"
   }
 ]

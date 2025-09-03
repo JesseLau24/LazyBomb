@@ -418,5 +418,35 @@
       "image_path": "/static/images/2025-09-02_150825.jpg",
       "reflection": "I guess this is not going to happen. But here is the wallpaper I am using"
     }
+  },
+  "2025-09-03": {
+    "health_goals": [
+      {
+        "goal": "Take a 20-minute nap",
+        "done": false
+      },
+      {
+        "goal": "Drink 5 cups of water",
+        "done": false
+      },
+      {
+        "goal": "Do 30 minutes of cardio",
+        "done": false
+      },
+      {
+        "goal": "Eat at least one fruit",
+        "done": false
+      },
+      {
+        "goal": "Sleep before midnight",
+        "done": false
+      }
+    ],
+    "happiness_task": {
+      "task": "Smile at your reflection for 30 seconds",
+      "custom_text": "",
+      "image_path": "",
+      "reflection": ""
+    }
   }
 }

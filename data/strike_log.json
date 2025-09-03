@@ -172,5 +172,29 @@
     "deadline": "2023-09-02T15:15",
     "status": "to do",
     "strike_time": "2025-09-02T15:13:28.727533"
+  },
+  {
+    "task": "Translate client emails from Japanese using local ollama agents.",
+    "deadline": "2025-09-02T15:30",
+    "status": "to do",
+    "strike_time": "2025-09-03T20:54:32.100801"
+  },
+  {
+    "task": "Check the quality of translated emails and make modifications as needed.",
+    "deadline": "2025-09-02T15:30",
+    "status": "to do",
+    "strike_time": "2025-09-03T20:54:32.101131"
+  },
+  {
+    "task": "Finish the weekly report for last week",
+    "deadline": "2025-09-03T19:00",
+    "status": "to do",
+    "strike_time": "2025-09-03T20:54:32.106763"
+  },
+  {
+    "task": "Send the finished weekly report to Jane",
+    "deadline": "2025-09-03T19:00",
+    "status": "to do",
+    "strike_time": "2025-09-03T20:54:32.106994"
   }
 ]
